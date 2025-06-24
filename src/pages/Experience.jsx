@@ -1,8 +1,8 @@
-// File: src/components/Experience.jsx
+// File: src/pages/Experience.jsx
 import React from "react";
 
 const Experience = () => (
-  <section className="p-6">
+  <section>
     <h2 className="text-2xl font-semibold mb-2">Work Experience</h2>
     <div>
       <h3 className="text-xl font-bold">DHL International - Distribution Centre</h3>

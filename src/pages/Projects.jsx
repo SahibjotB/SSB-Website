@@ -1,9 +1,8 @@
-
-// File: src/components/Projects.jsx
+// File: src/pages/Projects.jsx
 import React from "react";
 
 const Projects = () => (
-  <section className="p-6">
+  <section>
     <h2 className="text-2xl font-semibold mb-4">Projects</h2>
     <ul className="space-y-4">
       <li>
