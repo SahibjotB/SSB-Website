@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
+
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
