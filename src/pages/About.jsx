@@ -1,16 +1,21 @@
-// File: src/pages/About.jsx
 import React from "react";
 
-const About = () => (
-  <section className="text-center">
-    <h1 className="text-3xl font-bold mb-2">Sahibjot Boyal</h1>
-    <p className="text-lg">React Web Developer</p>
-    <p className="mt-2">📧 sboyal3@uwo.ca | 📞 (647) 865 - 0244</p>
-    <div className="mt-4 space-x-4">
-      <a className="text-blue-600 hover:underline" href="https://github.com/sahibjotb" target="_blank">GitHub</a>
-      <a className="text-blue-600 hover:underline" href="https://linkedin.com/in/sahibjotb" target="_blank">LinkedIn</a>
-    </div>
-  </section>
-);
-
-export default About;
+export default function About() {
+  return (
+    <section className="text-center space-y-4">
+      <h2 className="text-3xl font-bold">Software Developer</h2>
+      <p>📧 sboyal3@uwo.ca | 📞 (647) 865‑0244</p>
+      <div className="flex justify-center space-x-6">
+        <a href="https://github.com/sahibjotb" target="_blank" className="text-blue-600 hover:underline">
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/sahibjotb" target="_blank" className="text-blue-600 hover:underline">
+          LinkedIn
+        </a>
+      </div>
+      <p className="mt-6 text-lg">
+        Welcome! I’m Sahibjot, a skilled Software developer with a passion for building fast, clean, responsive interfaces. Explore my education, experience, and projects.
+      </p>
+    </section>
+  );
+}
