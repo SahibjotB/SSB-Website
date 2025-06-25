@@ -9,7 +9,7 @@ export default function Footer() {
           href="/about"
           className="text-blue-600 hover:underline"
         >
-          About
+          Home
         </a>
       </p>
     </footer>
