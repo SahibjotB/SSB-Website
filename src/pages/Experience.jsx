@@ -35,9 +35,11 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-gray-100 px-4 py-12">
-      <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 text-center mb-8">Experience</h1>
-      <div className="max-w-4xl mx-auto grid gap-6">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 px-2 sm:px-4 py-8 sm:py-12">
+      <h1 className="text-2xl sm:text-4xl font-bold text-gray-800 dark:text-gray-100 text-center mb-6 sm:mb-8">
+        Experience
+      </h1>
+      <div className="max-w-4xl mx-auto grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
         {experiences.map((exp, idx) => (
           <a
             key={idx}
