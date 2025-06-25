@@ -35,8 +35,8 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <div className="min-h-screen bg-gray-50 px-4 py-12">
-      <h1 className="text-4xl font-bold text-gray-800 text-center mb-8">Experience</h1>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-gray-100 px-4 py-12">
+      <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 text-center mb-8">Experience</h1>
       <div className="max-w-4xl mx-auto grid gap-6">
         {experiences.map((exp, idx) => (
           <a
@@ -44,7 +44,7 @@ export default function Experience() {
             href={exp.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-6 bg-white rounded-2xl shadow hover:bg-purple-700 hover:text-white transition-colors duration-300"
+            className="block p-6 bg-white dark:bg-gray-800 rounded-2xl shadow hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white transition-colors duration-300 text-gray-900 dark:text-gray-100"
           >
             <h2 className="text-2xl font-semibold">{exp.title}</h2>
             <p className="italic text-gray-600 mb-2">{exp.subtitle}</p>

@@ -11,3 +11,11 @@ html, body, #root {
   font-family: 'Inter', sans-serif;
   background-color: white;
 }
+
+/* Enable dark mode background globally */
+html.dark {
+  background-color: #18181b;
+}
+body.dark {
+  background-color: #18181b;
+}

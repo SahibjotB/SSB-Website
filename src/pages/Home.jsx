@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center text-white">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 dark:bg-gray-900 flex items-center justify-center text-white dark:text-gray-100">
       <div className="text-center p-6">
         <p className="text-lg mb-2">Hi, I'm</p>
         <h1 className="text-5xl font-bold mb-2">Sahibjot Boyal</h1>
@@ -14,7 +14,7 @@ export default function Home() {
             <Link
               key={label}
               to={`/${label.toLowerCase()}`}
-              className="text-xl px-10 py-5 rounded-2xl bg-white text-purple-700 font-semibold shadow-lg hover:bg-purple-700 hover:text-white transition-all duration-300"
+              className="text-xl px-10 py-5 rounded-2xl bg-white dark:bg-gray-800 text-purple-700 dark:text-purple-200 font-semibold shadow-lg hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white transition-all duration-300"
             >
               {label}
             </Link>
@@ -24,7 +24,7 @@ export default function Home() {
             href="/sahib-resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xl px-10 py-5 rounded-2xl bg-white text-purple-700 font-semibold shadow-lg hover:bg-purple-700 hover:text-white transition-all duration-300"
+            className="text-xl px-10 py-5 rounded-2xl bg-white dark:bg-gray-800 text-purple-700 dark:text-purple-200 font-semibold shadow-lg hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white transition-all duration-300"
           >
             Resume
           </a>
@@ -33,7 +33,7 @@ export default function Home() {
             href="https://github.com/SahibjotB"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xl px-10 py-5 rounded-2xl bg-white text-purple-700 font-semibold shadow-lg hover:bg-purple-700 hover:text-white transition-all duration-300"
+            className="text-xl px-10 py-5 rounded-2xl bg-white dark:bg-gray-800 text-purple-700 dark:text-purple-200 font-semibold shadow-lg hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white transition-all duration-300"
           >
             GitHub
           </a>
@@ -42,7 +42,7 @@ export default function Home() {
             href="https://www.linkedin.com/in/sahibjotb/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xl px-10 py-5 rounded-2xl bg-white text-purple-700 font-semibold shadow-lg hover:bg-purple-700 hover:text-white transition-all duration-300"
+            className="text-xl px-10 py-5 rounded-2xl bg-white dark:bg-gray-800 text-purple-700 dark:text-purple-200 font-semibold shadow-lg hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white transition-all duration-300"
           >
             LinkedIn
           </a>
