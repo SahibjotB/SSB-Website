@@ -1,50 +1,58 @@
 import React from "react";
+import westernLogo from "../assets/western.png";
+import graduationPhoto from "../assets/western2.jpg";
 
-const Education = () => {
+export default function Education() {
   return (
-    <div className="bg-gray-50 min-h-screen pt-20 px-6 sm:px-16 lg:px-32 text-gray-800 font-sans">
-      <div className="mb-12">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Western_University_Logo.svg/2560px-Western_University_Logo.svg.png"
-          alt="Western University"
-          className="w-80 mx-auto mb-6"
-        />
-        <p className="italic text-center text-sm text-gray-600">
-          A top Canadian research university located in London, Ontario, known for excellence in technology, business, and healthcare.
-        </p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-white to-purple-100 px-6 py-12 flex flex-col items-center">
+      {/* Logo */}
+      <img src={westernLogo} alt="Western Logo" className="h-24 mb-8" />
 
-      <div className="bg-white shadow-md rounded-lg p-6 mb-8">
-        <h2 className="text-lg font-semibold mb-1 text-purple-800">
-          Bachelor of Science – Computer Science <span className="text-sm font-normal text-gray-600">(Sept 2020 – Dec 2024)</span>
-        </h2>
-        <p>
-          Specialized training in AI, databases, cybersecurity, and systems. Completed upper-year project work and practical assignments.
-          Maintained academic standards of 70%+ average with no course under 60%.
-        </p>
-      </div>
+      {/* Content */}
+      <div className="flex flex-col md:flex-row gap-10 max-w-6xl w-full">
+        {/* Left: Graduation Image */}
+        <div className="md:w-1/2">
+          <img
+            src={graduationPhoto}
+            alt="Graduation"
+            className="w-full h-full rounded-xl object-cover shadow-xl"
+            style={{ minHeight: "600px" }}
+          />
+        </div>
 
-      <div className="bg-white shadow-md rounded-lg p-6 mb-8">
-        <h3 className="text-lg font-semibold text-purple-700 mb-2">📘 Key Coursework</h3>
-        <ul className="list-disc list-inside space-y-1 text-sm">
-          <li>Foundations of Programming & Data Structures</li>
-          <li>Computer Organization & Operating Systems</li>
-          <li>Algorithms, Graph Theory & Complexity</li>
-          <li>Object-Oriented Software Engineering</li>
-          <li>Machine Learning & Artificial Intelligence</li>
-          <li>Cryptography & Network Security</li>
-          <li>Advanced Databases & Cloud Systems</li>
-        </ul>
-      </div>
+        {/* Right: Sections */}
+        <div className="md:w-1/2 flex flex-col gap-6">
+          {/* About */}
+          <div className="bg-white rounded-xl p-6 shadow-md hover:bg-purple-700/20 transition duration-300 ease-in-out">
+            <h2 className="text-xl font-semibold text-purple-700 mb-2">About the Program</h2>
+            <p className="text-gray-800">
+              I completed a 4-year Bachelor of Science in Computer Science at Western University (Class of 2024), based in London, Ontario. The program emphasized theoretical and practical learning in AI, cybersecurity, systems engineering, and database technologies — fostering collaboration, innovation, and technical depth.
+            </p>
+          </div>
 
-      <div className="bg-white shadow-md rounded-lg p-6">
-        <h3 className="text-lg font-semibold text-purple-700 mb-2">🎓 Campus Experience</h3>
-        <p className="text-sm">
-          Engaged in peer programming groups and tech clubs. Participated in hackathons and undergraduate research projects.
-        </p>
+          {/* Courses */}
+          <div className="bg-white rounded-xl p-6 shadow-md hover:bg-purple-700/20 transition duration-300 ease-in-out">
+            <h2 className="text-xl font-semibold text-purple-700 mb-2">Key Coursework</h2>
+            <ul className="list-disc pl-6 text-gray-800">
+              <li>Data Structures & Algorithms</li>
+              <li>Operating Systems</li>
+              <li>Computer Networks & Security</li>
+              <li>Databases and SQL</li>
+              <li>Object-Oriented Software Engineering</li>
+              <li>Web & Mobile Application Development</li>
+              <li>Artificial Intelligence & Machine Learning</li>
+            </ul>
+          </div>
+
+          {/* Involvement */}
+          <div className="bg-white rounded-xl p-6 shadow-md hover:bg-purple-700/20 transition duration-300 ease-in-out">
+            <h2 className="text-xl font-semibold text-purple-700 mb-2">Campus Involvement</h2>
+            <p className="text-gray-800">
+              I participated in programming clubs, mentorship programs, and hackathons. These activities enhanced my teamwork and leadership capabilities, complementing my academic training through real-world collaboration and innovation.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
-};
-
-export default Education;
+}
