@@ -33,7 +33,7 @@ export default function Navbar() {
         {/* RIGHT: Nav Pages */}
         <div className="flex space-x-6 text-base">
           {[
-            { to: "/about", label: "Home" },
+            { to: "/home", label: "Home" },
             { to: "/education", label: "Education" },
             { to: "/experience", label: "Experience" },
             { to: "/projects", label: "Projects" },
