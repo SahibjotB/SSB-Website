@@ -3,54 +3,33 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* LEFT: Name + Links + Contact */}
-        <div className="flex items-center space-x-4 text-sm text-gray-700 flex-wrap">
-          <span className="font-bold text-xl whitespace-nowrap">Sahibjot Boyal</span>
-
-          <a
-            href="https://github.com/sahibjotb"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
+    <nav className="flex justify-between items-center px-8 py-4 bg-white shadow-md sticky top-0 z-50">
+      <div className="flex items-center space-x-4">
+        <span className="text-xl font-bold text-purple-700">Sahibjot Boyal</span>
+        <a href="https://github.com/SahibjotB" className="text-sm text-gray-700 hover:text-purple-700">GitHub</a>
+        <a href="https://linkedin.com" className="text-sm text-gray-700 hover:text-purple-700">LinkedIn</a>
+        <span className="text-sm text-gray-600 ml-4">📞 647-865-0244</span>
+        <span className="text-sm text-gray-600 ml-2">✉️ sboyal3@uwo.ca</span>
+      </div>
+      <div className="flex space-x-6">
+        {[
+          { to: "/", label: "Home" },
+          { to: "/education", label: "Education" },
+          { to: "/experience", label: "Experience" },
+          { to: "/projects", label: "Projects" },
+        ].map(({ to, label }) => (
+          <NavLink
+            key={to}
+            to={to}
+            className={({ isActive }) =>
+              `hover:text-purple-700 ${
+                isActive ? "font-semibold border-b-2 border-purple-700" : "text-gray-700"
+              }`
+            }
           >
-            GitHub
-          </a>
-          <a
-            href="https://linkedin.com/in/sahibjotb"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
-          >
-            LinkedIn
-          </a>
-
-          <span className="ml-4 whitespace-nowrap">📧 sboyal3@uwo.ca</span>
-          <span className="whitespace-nowrap">📞 (647) 865-0244</span>
-        </div>
-
-        {/* RIGHT: Nav Pages */}
-        <div className="flex space-x-6 text-base">
-          {[
-            { to: "/home", label: "Home" },
-            { to: "/education", label: "Education" },
-            { to: "/experience", label: "Experience" },
-            { to: "/projects", label: "Projects" },
-          ].map(({ to, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              className={({ isActive }) =>
-                `hover:text-blue-600 ${
-                  isActive ? "font-semibold border-b-2 border-blue-600" : "text-gray-700"
-                }`
-              }
-            >
-              {label}
-            </NavLink>
-          ))}
-        </div>
+            {label}
+          </NavLink>
+        ))}
       </div>
     </nav>
   );
