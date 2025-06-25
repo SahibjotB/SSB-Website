@@ -1,17 +1,17 @@
-// File: src/App.jsx
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import About from "./pages/About";
-import Education from "./pages/Education";
-import Experience from "./pages/Experience";
-import Projects from "./pages/Projects";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+import About from "./pages/About.jsx";
+import Education from "./pages/Education.jsx";
+import Experience from "./pages/Experience.jsx";
+import Projects from "./pages/Projects.jsx";
 
 function App() {
   return (
-    <div className="bg-gray-50 text-gray-900 min-h-screen font-sans">
+    <div className="min-h-screen flex flex-col font-sans bg-white text-gray-800">
       <Navbar />
-      <div className="p-6">
+      <main className="flex-grow p-8 max-w-4xl mx-auto">
         <Routes>
           <Route path="/" element={<Navigate to="/about" replace />} />
           <Route path="/about" element={<About />} />
@@ -19,7 +19,8 @@ function App() {
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 }
