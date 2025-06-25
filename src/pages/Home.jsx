@@ -21,15 +21,6 @@ export default function Home() {
           ))}
 
           <a
-            href="/sahib-resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xl px-10 py-5 rounded-2xl bg-white dark:bg-gray-800 text-purple-700 dark:text-purple-200 font-semibold shadow-lg hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white transition-all duration-300"
-          >
-            Resume
-          </a>
-
-          <a
             href="https://github.com/SahibjotB"
             target="_blank"
             rel="noopener noreferrer"
@@ -45,6 +36,15 @@ export default function Home() {
             className="text-xl px-10 py-5 rounded-2xl bg-white dark:bg-gray-800 text-purple-700 dark:text-purple-200 font-semibold shadow-lg hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white transition-all duration-300"
           >
             LinkedIn
+          </a>
+          
+          <a
+            href="/sahib-resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl px-10 py-5 rounded-2xl bg-white dark:bg-gray-800 text-purple-700 dark:text-purple-200 font-semibold shadow-lg hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white transition-all duration-300"
+          >
+            Resume
           </a>
         </div>
 
