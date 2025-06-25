@@ -7,7 +7,6 @@ export default function Education() {
       <div className="flex items-center gap-6 bg-gray-50 p-6 rounded shadow hover:bg-purple-100 transition">
         <img src={WesternLogo} alt="Western University Logo" className="h-20 w-auto" />
         <div>
-          <h3 className="text-2xl font-bold">Western University</h3>
           <p className="italic text-gray-600">
             A top Canadian research university located in London, Ontario, known for excellence in technology, business, and healthcare.
           </p>
