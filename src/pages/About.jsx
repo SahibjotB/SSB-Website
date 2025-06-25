@@ -1,21 +1,32 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function About() {
+export default function Home() {
+  const navigate = useNavigate();
+
+  const navButtons = [
+    { label: "Education", to: "/education" },
+    { label: "Experience", to: "/experience" },
+    { label: "Projects", to: "/projects" },
+  ];
+
   return (
-    <section className="text-center space-y-4">
-      <h2 className="text-3xl font-bold">Software Developer</h2>
-      <p>📧 sboyal3@uwo.ca | 📞 (647) 865‑0244</p>
-      <div className="flex justify-center space-x-6">
-        <a href="https://github.com/sahibjotb" target="_blank" className="text-blue-600 hover:underline">
-          GitHub
-        </a>
-        <a href="https://linkedin.com/in/sahibjotb" target="_blank" className="text-blue-600 hover:underline">
-          LinkedIn
-        </a>
+    <div className="min-h-[80vh] flex flex-col items-center justify-start pt-32 bg-white text-gray-900 px-4">
+      <h2 className="text-lg text-gray-500 mb-2">Hi, I'm</h2>
+      <h1 className="text-5xl sm:text-6xl font-bold text-center">Sahibjot Boyal</h1>
+      <p className="text-2xl mt-3 text-gray-600 text-center">Software Developer</p>
+
+      <div className="mt-10 flex flex-wrap gap-6">
+        {navButtons.map(({ label, to }) => (
+          <button
+            key={label}
+            onClick={() => navigate(to)}
+            className="px-8 py-4 rounded-xl shadow-md bg-gray-100 hover:bg-purple-500 hover:text-white transition text-lg font-semibold"
+          >
+            {label}
+          </button>
+        ))}
       </div>
-      <p className="mt-6 text-lg">
-        Welcome! I’m Sahibjot, a skilled Software developer with a passion for building fast, clean, responsive interfaces. Explore my education, experience, and projects.
-      </p>
-    </section>
+    </div>
   );
 }
