@@ -10,27 +10,46 @@ export default function Home() {
         <p className="text-xl mb-10">Software Developer</p>
 
         <div className="flex flex-wrap gap-6 justify-center">
-          {["Education", "Experience", "Projects", "Resume"].map((label) =>
-            label === "Resume" ? (
-              <a
-                key={label}
-                href="/sahib-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg px-8 py-4 rounded-2xl bg-white text-purple-700 font-medium shadow-lg hover:bg-purple-700 hover:text-white transition-all duration-300"
-              >
-                {label}
-              </a>
-            ) : (
-              <Link
-                key={label}
-                to={`/${label.toLowerCase()}`}
-                className="text-lg px-8 py-4 rounded-2xl bg-white text-purple-700 font-medium shadow-lg hover:bg-purple-700 hover:text-white transition-all duration-300"
-              >
-                {label}
-              </Link>
-            )
-          )}
+          {["Education", "Experience", "Projects"].map((label) => (
+            <Link
+              key={label}
+              to={`/${label.toLowerCase()}`}
+              className="text-xl px-10 py-5 rounded-2xl bg-white text-purple-700 font-semibold shadow-lg hover:bg-purple-700 hover:text-white transition-all duration-300"
+            >
+              {label}
+            </Link>
+          ))}
+
+          <a
+            href="/sahib-resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl px-10 py-5 rounded-2xl bg-white text-purple-700 font-semibold shadow-lg hover:bg-purple-700 hover:text-white transition-all duration-300"
+          >
+            Resume
+          </a>
+
+          <a
+            href="https://github.com/SahibjotB"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl px-10 py-5 rounded-2xl bg-white text-purple-700 font-semibold shadow-lg hover:bg-purple-700 hover:text-white transition-all duration-300"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/sahibjotb/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl px-10 py-5 rounded-2xl bg-white text-purple-700 font-semibold shadow-lg hover:bg-purple-700 hover:text-white transition-all duration-300"
+          >
+            LinkedIn
+          </a>
+        </div>
+
+        <div className="mt-10 text-lg font-medium">
+          📞 647-865-0244 • 📧 sboyal3@uwo.ca
         </div>
       </div>
     </div>
