@@ -7,7 +7,15 @@ export default function Navbar() {
       <div className="flex items-center space-x-4">
         <span className="text-xl font-bold text-purple-700">Sahibjot Boyal</span>
         <a href="https://github.com/SahibjotB" className="text-sm text-gray-700 hover:text-purple-700">GitHub</a>
-        <a href="https://linkedin.com" className="text-sm text-gray-700 hover:text-purple-700">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/sahibjotb/" className="text-sm text-gray-700 hover:text-purple-700">LinkedIn</a>
+        <a
+          href="/sahib-resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-gray-700 hover:text-purple-700"
+        >
+          Resume
+        </a>
         <span className="text-sm text-gray-600 ml-4">📞 647-865-0244</span>
         <span className="text-sm text-gray-600 ml-2">✉️ sboyal3@uwo.ca</span>
       </div>
