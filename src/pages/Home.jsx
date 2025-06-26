@@ -7,7 +7,7 @@ import LinkedInLogo from "../assets/linkedin-logo.png";
 export default function Home() {
   return (
     <div className="min-h-[calc(100vh-300px)] flex items-start lg:items-center bg-white text-gray-900 px-6 md:px-16 pt-8">
-      <div className="flex flex-col-reverse lg:flex-row items-start max-w-6xl mx-auto w-full gap-12">
+      <div className="flex flex-col lg:flex-row items-start max-w-6xl mx-auto w-full gap-12">
         {/* Text Section */}
         <div className="lg:w-1/2 text-center lg:text-left space-y-6 pt-28">
           <div>
