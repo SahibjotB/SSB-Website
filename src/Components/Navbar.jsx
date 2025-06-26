@@ -20,17 +20,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="w-full bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
+    <nav className="w-full bg-white dark:bg-black shadow-md sticky top-0 z-50">
       <div className="flex justify-between items-center px-4 md:px-8 py-4.5 min-h-[72px]">
         {/* Left Side: Name + Contact Info */}
         <div className="flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0 md:space-x-4">
           <Link
             to="/"
-            className="text-2xl md:text-2xl font-bold text-purple-700 dark:text-purple-300 hover:underline"
+            className="text-2xl md:text-2xl font-bold text-purple-700 dark:text-purple-500 hover:underline"
           >
             Sahibjot Boyal
           </Link>
-          <div className="hidden md:flex flex-wrap items-center gap-x-4 text-base text-gray-600 dark:text-gray-300 font-semibold">
+          <div className="hidden md:flex flex-wrap items-center gap-x-4 text-base text-black dark:text-white font-semibold">
             <span>📞 647-865-0244</span>
             <span>✉️ sboyal3@uwo.ca</span>
           </div>
@@ -49,7 +49,7 @@ export default function Navbar() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 dark:text-gray-200 hover:text-purple-700 dark:hover:text-purple-300"
+                className="text-black dark:text-white hover:text-purple-700 dark:hover:text-purple-300"
               >
                 {label}
               </a>
@@ -57,7 +57,7 @@ export default function Navbar() {
               <NavLink
                 key={to}
                 to={to}
-                className="text-gray-700 dark:text-gray-200 hover:text-purple-700 dark:hover:text-purple-300"
+                className="text-black dark:text-white hover:text-purple-700 dark:hover:text-purple-300"
               >
                 {label}
               </NavLink>
@@ -67,20 +67,20 @@ export default function Navbar() {
             <img src={resumeLogo} alt="Resume" className="w-[60px] h-[60px] hover:scale-110 transition-transform " />
           </a>
           <a href="https://github.com/SahibjotB" target="_blank" rel="noopener noreferrer">
-            <img src={githubLogo} alt="GitHub" className="w-[65px] h-[65px] hover:scale-110 transition-transform " />
+            <img src={githubLogo} alt="GitHub" className="w-[65px] h-[65px] hover:scale-110 transition-transform dark:invert" />
           </a>
           <a href="https://www.linkedin.com/in/sahibjotb/" target="_blank" rel="noopener noreferrer">
             <img src={linkedinLogo} alt="LinkedIn" className="w-[60px] h-[60px] hover:scale-110 transition-transform " />
           </a>
           <button
             onClick={() => setDarkMode((prev) => !prev)}
-            className="ml-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
+            className="ml-2 p-2 rounded-full bg-white dark:bg-black hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
             aria-label="Toggle dark mode"
           >
             {darkMode ? (
-              <SunIcon className="w-10 h-10 text-yellow-400" />
+              <SunIcon className="w-12 h-12 text-yellow-400" />
             ) : (
-              <MoonIcon className="w-10 h-10 text-gray-800 dark:text-gray-200" />
+              <MoonIcon className="w-12 h-12 text-black dark:text-white" />
             )}
           </button>
         </div>
@@ -123,7 +123,7 @@ export default function Navbar() {
         <div className="md:hidden fixed inset-0 z-50 flex" onClick={() => setDrawerOpen(false)}>
           <div className="flex-1" />
           <div
-            className="relative w-64 h-full bg-white dark:bg-gray-900 shadow-lg flex flex-col p-6"
+            className="relative w-64 h-full bg-white dark:bg-black shadow-lg flex flex-col p-6"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -164,7 +164,7 @@ export default function Navbar() {
                   href="https://github.com/SahibjotB"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:scale-110 transition-transform"
+                  className="p-2 rounded-full hover:scale-110 transition-transform dark:invert"
                 >
                   <img src={githubLogo} alt="GitHub" className="w-[55px] h-[55px]" />
                 </a>
@@ -178,7 +178,7 @@ export default function Navbar() {
                 </a>
               </div>
 
-              <div className="mt-6 pl-1 text-left text-[15px] text-gray-800 dark:text-gray-200 space-y-2">
+              <div className="mt-6 pl-1 text-left text-[15px] text-black dark:text-white space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="text-lg">📞</span>
                   <span>647-865-0244</span>
