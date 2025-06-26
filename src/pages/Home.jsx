@@ -27,7 +27,7 @@ export default function Home() {
               <img
                 src={ResumeLogo}
                 alt="Resume"
-                className=" w-[110px] h-[110px] hover:scale-110 transition-transform"
+                className=" w-[100px] h-[100px] hover:scale-110 transition-transform"
               />
 
             </a>
@@ -39,7 +39,7 @@ export default function Home() {
               <img
                 src={GitHubLogo}
                 alt="GitHub"
-                className="w-[120px] h-[120px] hover:scale-110 transition-transform dark:invert"
+                className="w-[110px] h-[110px] hover:scale-110 transition-transform dark:invert"
               />
             </a>
             <a
@@ -50,7 +50,7 @@ export default function Home() {
               <img
                 src={LinkedInLogo}
                 alt="LinkedIn"
-                className="w-[110px] h-[110px] hover:scale-110 transition-transform dark:invert"
+                className="w-[100px] h-[100px] hover:scale-110 transition-transform dark:invert"
               />
             </a>
           </div>

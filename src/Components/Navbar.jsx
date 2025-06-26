@@ -4,6 +4,7 @@ import { SunIcon, MoonIcon } from "./ThemeIcons";
 import githubLogo from "../assets/github-logo.svg";
 import linkedinLogo from "../assets/linkedin-logo.svg";
 import resumeLogo from "../assets/resume-logo.png";
+import Logo from "/logo.png";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
@@ -24,12 +25,21 @@ export default function Navbar() {
       <div className="flex justify-between items-center px-4 md:px-8 py-4.5 min-h-[72px]">
         {/* Left Side: Name + Contact Info */}
         <div className="flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0 md:space-x-4">
-          <Link
-            to="/"
-            className="text-2xl md:text-2xl font-bold text-purple-700 dark:text-purple-500 hover:underline pl-4"
-          >
-            Sahibjot Boyal
-          </Link>
+          <div className="flex items-center space-x-2 hover:text-black">
+            <Link
+              to="/"
+              className="text-2xl md:text-2xl"
+            >
+              <img src={Logo} alt="Logo" className="w-10 h-10 md:w-12 md:h-12 rounded-full hover:scale-110" />
+            </Link>
+
+            <Link
+              to="/"
+              className="text-2xl md:text-2xl font-bold text-purple-700 dark:text-purple-500 hover:text-black dark:hover:text-white"
+            >
+              Sahibjot Boyal
+            </Link>
+          </div>
           <div className="hidden md:flex flex-wrap items-center pl-2 gap-x-2 text-base text-black dark:text-white font-semibold">
 
             <a href="/sahib-resume.pdf" target="_blank" rel="noopener noreferrer">
@@ -64,7 +74,7 @@ export default function Navbar() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black dark:text-white hover:text-purple-700 dark:hover:text-purple-300"
+                className="text-black dark:text-white hover:text-purple-700 dark:hover:text-purple-700"
               >
                 {label}
               </a>
@@ -72,7 +82,7 @@ export default function Navbar() {
               <NavLink
                 key={to}
                 to={to}
-                className="text-black dark:text-white hover:text-purple-700 dark:hover:text-purple-300"
+                className="text-black dark:text-white hover:text-purple-700 dark:hover:text-purple-700"
               >
                 {label}
               </NavLink>
@@ -151,7 +161,7 @@ export default function Navbar() {
                 <NavLink
                   key={to}
                   to={to}
-                  className="w-full px-4 py-2 text-center rounded-md bg-neutral-300 dark:bg-neutral-950 text-black dark:text-white hover:bg-purple-700 transition duration-200 font-semibold"
+                  className="w-full px-4 py-2 text-center rounded-md bg-neutral-300 dark:bg-neutral-950 text-black dark:text-white hover:bg-purple-500 dark:hover:bg-purple-700 transition duration-200 font-semibold"
                 >
                   {label}
                 </NavLink>
