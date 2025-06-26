@@ -1,8 +1,9 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import HeroImage from "../assets/hero-illustration.svg";
-import GitHubLogo from "../assets/github-logo.png";
-import LinkedInLogo from "../assets/linkedin-logo.png";
+import GitHubLogo from "../assets/github-logo.svg";
+import LinkedInLogo from "../assets/linkedin-logo.svg";
+import ResumeLogo from "../assets/resume-logo.png";
 
 export default function Home() {
   return (
@@ -11,8 +12,8 @@ export default function Home() {
         {/* Text Section */}
         <div className="lg:w-1/2 w-full text-center lg:text-left space-y-6 pt-28">
           <div>
-            <h1 className="text-5xl md:text-7xl font-extrabold">Hi, I'm</h1>
-            <h1 className="text-5xl md:text-7xl font-extrabold text-purple-600 mt-2">
+            <h1 className="text-6xl md:text-7xl font-extrabold">Hi, I'm</h1>
+            <h1 className="text-6xl md:text-7xl font-extrabold text-purple-600 mt-2">
               Sahibjot
             </h1>
           </div>
@@ -22,9 +23,13 @@ export default function Home() {
               href="/sahib-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-purple-600 text-white rounded-xl shadow hover:bg-purple-800 transition font-semibold text-base"
             >
-              My Resume
+              <img
+                src={ResumeLogo}
+                alt="Resume"
+                className=" w-[110px] h-[110px] hover:scale-110 transition-transform"
+              />
+
             </a>
             <a
               href="https://github.com/SahibjotB"
@@ -34,7 +39,7 @@ export default function Home() {
               <img
                 src={GitHubLogo}
                 alt="GitHub"
-                className="w-10 h-10 hover:scale-110 transition-transform"
+                className="w-[115px] h-[115px] hover:scale-110 transition-transform"
               />
             </a>
             <a
@@ -45,7 +50,7 @@ export default function Home() {
               <img
                 src={LinkedInLogo}
                 alt="LinkedIn"
-                className="w-10 h-10 hover:scale-110 transition-transform"
+                className="w-[110px] h-[110px] hover:scale-110 transition-transform"
               />
             </a>
           </div>
