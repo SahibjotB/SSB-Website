@@ -10,7 +10,7 @@ export default function Home() {
     <div className="min-h-screen flex items-start lg:items-center bg-white dark:bg-black text-black dark:text-white px-6 md:px-16">
       <div className="flex flex-col lg:flex-row items-center lg:items-start max-w-7xl mx-auto w-full gap-10">
         {/* Text Section */}
-        <div className="lg:w-1/2 w-full text-center lg:text-left space-y-6 pt-16">
+        <div className="lg:w-1/2 w-full text-center lg:text-left space-y-6 pt-16 pl-4">
           <div>
             <h1 className="text-7xl md:text-8xl font-extrabold">Hi, I'm</h1>
             <h1 className="text-7xl md:text-8xl font-extrabold text-purple-600 mt-2">
