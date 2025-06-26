@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { SunIcon, MoonIcon } from "./ThemeIcons";
-import githubLogo from "../assets/github-logo.png";
-import linkedinLogo from "../assets/linkedin-logo.png";
+import githubLogo from "../assets/github-logo.svg";
+import linkedinLogo from "../assets/linkedin-logo.svg";
+import resumeLogo from "../assets/resume-logo.png";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
@@ -41,7 +42,6 @@ export default function Navbar() {
             { to: "/education", label: "Education" },
             { to: "/experience", label: "Experience" },
             { to: "/projects", label: "Projects" },
-            { href: "/sahib-resume.pdf", label: "Resume", external: true },
           ].map(({ to, href, label, external }) =>
             external ? (
               <a
@@ -63,6 +63,9 @@ export default function Navbar() {
               </NavLink>
             )
           )}
+          <a href="/sahib-resume.pdf" target="_blank" rel="noopener noreferrer">
+            <img src={resumeLogo} alt="Resume" className="w-10 h-10" />
+          </a>
           <a href="https://github.com/SahibjotB" target="_blank" rel="noopener noreferrer">
             <img src={githubLogo} alt="GitHub" className="w-10 h-10" />
           </a>
@@ -127,23 +130,22 @@ export default function Navbar() {
                 </NavLink>
               ))}
 
-              <a
-                href="/sahib-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full px-4 py-2 text-center rounded-md bg-purple-600 text-white hover:bg-purple-700 transition duration-200"
-              >
-                Resume
-              </a>
-
-              <div className="flex justify-center space-x-6 mt-6 pl-1">
+              <div className="flex justify-center space-x-1 mt-6 pl-1">
+                <a
+                  href="/sahib-resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-purple-100 dark:hover:bg-purple-800 transition"
+                >
+                  <img src={resumeLogo} alt="Resume" className="w-[50px] h-[50px]" />
+                </a>
                 <a
                   href="https://github.com/SahibjotB"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-purple-100 dark:hover:bg-purple-800 transition"
                 >
-                  <img src={githubLogo} alt="GitHub" className="w-[45px] h-[45px]" />
+                  <img src={githubLogo} alt="GitHub" className="w-[50px] h-[50px]" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/sahibjotb/"
@@ -151,7 +153,7 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-purple-100 dark:hover:bg-purple-800 transition"
                 >
-                  <img src={linkedinLogo} alt="LinkedIn" className="w-[45px] h-[45px]" />
+                  <img src={linkedinLogo} alt="LinkedIn" className="w-[50px] h-[50px]" />
                 </a>
               </div>
 
