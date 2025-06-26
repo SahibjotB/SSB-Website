@@ -36,7 +36,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="px-6 py-3 bg-purple-600 text-white rounded-xl shadow hover:bg-purple-800 transition"
             >
-              Resume
+              My Resume
             </a>
             <a href="https://github.com/SahibjotB" target="_blank" rel="noopener noreferrer">
               <img
@@ -54,9 +54,6 @@ export default function Home() {
             </a>
           </div>
 
-          <p className="text-lg pt-6">
-            📞 647-865-0244 • ✉️ sboyal3@uwo.ca
-          </p>
         </div>
 
         {/* Image Section */}
