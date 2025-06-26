@@ -80,7 +80,7 @@ export default function Home() {
           <img
             src={HeroImage}
             alt="Hero"
-            className="w-[95%] max-w-[650px] object-contain"
+            className="w-[95%] max-w-[650px] object-contain "
           />
         </div>
       </div>

@@ -26,18 +26,33 @@ export default function Navbar() {
         <div className="flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0 md:space-x-4">
           <Link
             to="/"
-            className="text-2xl md:text-2xl font-bold text-purple-700 dark:text-purple-500 hover:underline"
+            className="text-2xl md:text-2xl font-bold text-purple-700 dark:text-purple-500 hover:underline pl-4"
           >
             Sahibjot Boyal
           </Link>
-          <div className="hidden md:flex flex-wrap items-center gap-x-4 text-base text-black dark:text-white font-semibold">
+          <div className="hidden md:flex flex-wrap items-center pl-2 gap-x-2 text-base text-black dark:text-white font-semibold">
+
+            <a href="/sahib-resume.pdf" target="_blank" rel="noopener noreferrer">
+              <img src={resumeLogo} alt="Resume" className="w-[40px] h-[40px] hover:scale-110 transition-transform " />
+            </a>
+            <a href="https://github.com/SahibjotB" target="_blank" rel="noopener noreferrer">
+              <img src={githubLogo} alt="GitHub" className="w-[44px] h-[44px] hover:scale-110 transition-transform dark:invert" />
+            </a>
+            <a href="https://www.linkedin.com/in/sahibjotb/" target="_blank" rel="noopener noreferrer">
+              <img src={linkedinLogo} alt="LinkedIn" className="w-[41px] h-[41px] hover:scale-110 transition-transform " />
+            </a>
+
+          </div>
+          <div className="hidden md:flex flex-wrap items-center pl-2 gap-x-2 text-base text-black dark:text-white font-semibold">
+
             <span>📞 647-865-0244</span>
             <span>✉️ sboyal3@uwo.ca</span>
+
           </div>
         </div>
 
         {/* Desktop Links & Icons */}
-        <div className="hidden md:flex items-center space-x-6 font-semibold text-base">
+        <div className="hidden md:flex items-center space-x-6 font-semibold text-lg">
           {[ 
             { to: "/education", label: "Education" },
             { to: "/experience", label: "Experience" },
@@ -63,15 +78,6 @@ export default function Navbar() {
               </NavLink>
             )
           )}
-          <a href="/sahib-resume.pdf" target="_blank" rel="noopener noreferrer">
-            <img src={resumeLogo} alt="Resume" className="w-[60px] h-[60px] hover:scale-110 transition-transform " />
-          </a>
-          <a href="https://github.com/SahibjotB" target="_blank" rel="noopener noreferrer">
-            <img src={githubLogo} alt="GitHub" className="w-[65px] h-[65px] hover:scale-110 transition-transform dark:invert" />
-          </a>
-          <a href="https://www.linkedin.com/in/sahibjotb/" target="_blank" rel="noopener noreferrer">
-            <img src={linkedinLogo} alt="LinkedIn" className="w-[60px] h-[60px] hover:scale-110 transition-transform " />
-          </a>
           <button
             onClick={() => setDarkMode((prev) => !prev)}
             className="ml-2 p-2 rounded-full bg-white dark:bg-black hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
@@ -145,7 +151,7 @@ export default function Navbar() {
                 <NavLink
                   key={to}
                   to={to}
-                  className="w-full px-4 py-2 text-center rounded-md bg-purple-600 text-white hover:bg-purple-700 transition duration-200"
+                  className="w-full px-4 py-2 text-center rounded-md bg-neutral-300 dark:bg-neutral-950 text-black dark:text-white hover:bg-purple-700 transition duration-200 font-semibold"
                 >
                   {label}
                 </NavLink>
