@@ -20,45 +20,54 @@ export default function Navbar() {
 
   return (
     <nav className="w-full bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
-      <div className="flex justify-between items-center px-4 md:px-8 py-4">
+      <div className="flex justify-between items-center px-4 md:px-8 py-4.5 min-h-[72px]">
         {/* Left Side: Name + Contact Info */}
         <div className="flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0 md:space-x-4">
           <Link
             to="/"
-            className="text-lg md:text-xl font-bold text-purple-700 dark:text-purple-300 hover:underline"
+            className="text-2xl md:text-2xl font-bold text-purple-700 dark:text-purple-300 hover:underline"
           >
             Sahibjot Boyal
           </Link>
-          <div className="flex flex-wrap items-center gap-x-4 text-sm text-gray-600 dark:text-gray-300">
+          <div className="hidden md:flex flex-wrap items-center gap-x-4 text-base text-gray-600 dark:text-gray-300 font-semibold">
             <span>📞 647-865-0244</span>
             <span>✉️ sboyal3@uwo.ca</span>
           </div>
         </div>
 
-        {/* Desktop Nav Items */}
-        <div className="hidden md:flex items-center space-x-6 text-sm font-semibold text-gray-700 dark:text-gray-200">
-          <NavLink to="/education" className="hover:text-purple-700 dark:hover:text-purple-300">
-            Education
-          </NavLink>
-          <NavLink to="/experience" className="hover:text-purple-700 dark:hover:text-purple-300">
-            Experience
-          </NavLink>
-          <NavLink to="/projects" className="hover:text-purple-700 dark:hover:text-purple-300">
-            Projects
-          </NavLink>
-          <a
-            href="/sahib-resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-purple-700 dark:hover:text-purple-300"
-          >
-            Resume
-          </a>
+        {/* Desktop Links & Icons */}
+        <div className="hidden md:flex items-center space-x-6 font-semibold text-base">
+          {[ 
+            { to: "/education", label: "Education" },
+            { to: "/experience", label: "Experience" },
+            { to: "/projects", label: "Projects" },
+            { href: "/sahib-resume.pdf", label: "Resume", external: true },
+          ].map(({ to, href, label, external }) =>
+            external ? (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-200 hover:text-purple-700 dark:hover:text-purple-300"
+              >
+                {label}
+              </a>
+            ) : (
+              <NavLink
+                key={to}
+                to={to}
+                className="text-gray-700 dark:text-gray-200 hover:text-purple-700 dark:hover:text-purple-300"
+              >
+                {label}
+              </NavLink>
+            )
+          )}
           <a href="https://github.com/SahibjotB" target="_blank" rel="noopener noreferrer">
-            <img src={githubLogo} alt="GitHub" className="w-[30px] h-[30px]" />
+            <img src={githubLogo} alt="GitHub" className="w-10 h-10" />
           </a>
           <a href="https://www.linkedin.com/in/sahibjotb/" target="_blank" rel="noopener noreferrer">
-            <img src={linkedinLogo} alt="LinkedIn" className="w-[30px] h-[30px]" />
+            <img src={linkedinLogo} alt="LinkedIn" className="w-10 h-10" />
           </a>
           <button
             onClick={() => setDarkMode((prev) => !prev)}
@@ -66,14 +75,14 @@ export default function Navbar() {
             aria-label="Toggle dark mode"
           >
             {darkMode ? (
-              <SunIcon className="w-5 h-5 text-yellow-400" />
+              <SunIcon className="w-7 h-7 text-yellow-400" />
             ) : (
-              <MoonIcon className="w-5 h-5 text-gray-800 dark:text-gray-200" />
+              <MoonIcon className="w-7 h-7 text-gray-800 dark:text-gray-200" />
             )}
           </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Hamburger */}
         <button
           className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
           onClick={() => setDrawerOpen((open) => !open)}
@@ -89,7 +98,10 @@ export default function Navbar() {
       {drawerOpen && (
         <div className="md:hidden fixed inset-0 z-50 flex" onClick={() => setDrawerOpen(false)}>
           <div className="flex-1" />
-          <div className="relative w-64 h-full bg-white dark:bg-gray-900 shadow-lg flex flex-col p-6" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative w-64 h-full bg-white dark:bg-gray-900 shadow-lg flex flex-col p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               className="self-end mb-6 p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
               onClick={() => setDrawerOpen(false)}
@@ -124,8 +136,7 @@ export default function Navbar() {
                 Resume
               </a>
 
-              {/* Icons Row */}
-              <div className="flex justify-center space-x-6 mt-6">
+              <div className="flex justify-center space-x-6 mt-6 pl-1">
                 <a
                   href="https://github.com/SahibjotB"
                   target="_blank"
@@ -142,6 +153,17 @@ export default function Navbar() {
                 >
                   <img src={linkedinLogo} alt="LinkedIn" className="w-[45px] h-[45px]" />
                 </a>
+              </div>
+
+              <div className="mt-6 pl-1 text-left text-[15px] text-gray-800 dark:text-gray-200 space-y-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">📞</span>
+                  <span>647-865-0244</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">✉️</span>
+                  <span>sboyal3@uwo.ca</span>
+                </div>
               </div>
             </div>
           </div>
