@@ -11,9 +11,9 @@ export default function Home() {
         {/* Text Section */}
         <div className="lg:w-1/2 text-center lg:text-left space-y-6 pt-28">
           <div>
-            <h1 className="text-5xl md:text-6xl font-extrabold">Hi, I'm</h1>
-            <h1 className="text-5xl md:text-6xl font-extrabold text-purple-600 mt-2">
-              Sahibjot Boyal
+            <h1 className="text-5xl md:text-7xl font-extrabold">Hi, I'm</h1>
+            <h1 className="text-5xl md:text-7xl font-extrabold text-purple-600 mt-2">
+              Sahibjot
             </h1>
           </div>
 
@@ -55,9 +55,9 @@ export default function Home() {
             <span className="text-purple-600 font-semibold">
               <Typewriter
                 words={[
-                  "Software Developer",
-                  "Web Developer",
-                  "Computer Scientist",
+                  "Software Developer.",
+                  "Web Developer.",
+                  "Computer Scientist.",
                 ]}
                 loop={0}
                 cursor
@@ -71,7 +71,7 @@ export default function Home() {
         </div>
 
         {/* Image Section */}
-        <div className="lg:w-1/2 flex justify-center pt-10">
+        <div className="lg:w-1/2 flex justify-center pt-6">
           <img
             src={HeroImage}
             alt="Hero"
