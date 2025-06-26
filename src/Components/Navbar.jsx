@@ -90,7 +90,7 @@ export default function Navbar() {
           )}
           <button
             onClick={() => setDarkMode((prev) => !prev)}
-            className="ml-2 p-2 rounded-full bg-white dark:bg-black hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
+            className="ml-2 p-2 rounded-full bg-white dark:bg-black hover:invert transition-colors"
             aria-label="Toggle dark mode"
           >
             {darkMode ? (
@@ -105,7 +105,7 @@ export default function Navbar() {
           {/* Mobile Dark Mode Toggle */}
           <button
             onClick={() => setDarkMode((prev) => !prev)}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
+            className="p-2 rounded-full bg-white dark:bg-black hover:invert transition-colors"
             aria-label="Toggle dark mode"
           >
             {darkMode ? (
@@ -161,7 +161,7 @@ export default function Navbar() {
                 <NavLink
                   key={to}
                   to={to}
-                  className="w-full px-4 py-2 text-center rounded-md bg-neutral-300 dark:bg-neutral-950 text-black dark:text-white hover:bg-purple-500 dark:hover:bg-purple-700 transition duration-200 font-semibold"
+                  className="w-full px-4 py-2 text-center rounded-md bg-purple-700 text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-200 font-semibold"
                 >
                   {label}
                 </NavLink>
