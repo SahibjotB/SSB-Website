@@ -6,10 +6,10 @@ import LinkedInLogo from "../assets/linkedin-logo.png";
 
 export default function Home() {
   return (
-    <div className="min-h-[calc(100vh-300px)] flex items-start lg:items-center bg-white text-gray-900 px-6 md:px-16 pt-8">
-      <div className="flex flex-col lg:flex-row items-start max-w-6xl mx-auto w-full gap-12">
+    <div className="min-h-[calc(100vh-300px)] overflow-x-hidden flex items-start lg:items-center bg-white text-gray-900 px-6 md:px-16 pt-8">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start max-w-6xl mx-auto w-full gap-12">
         {/* Text Section */}
-        <div className="lg:w-1/2 text-center lg:text-left space-y-6 pt-28">
+        <div className="lg:w-1/2 w-full text-center lg:text-left space-y-6 pt-28">
           <div>
             <h1 className="text-5xl md:text-7xl font-extrabold">Hi, I'm</h1>
             <h1 className="text-5xl md:text-7xl font-extrabold text-purple-600 mt-2">
@@ -22,7 +22,7 @@ export default function Home() {
               href="/sahib-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-purple-600 text-white rounded-xl shadow hover:bg-purple-800 transition font-semibold text-base md:text-base"
+              className="px-6 py-3 bg-purple-600 text-white rounded-xl shadow hover:bg-purple-800 transition font-semibold text-base"
             >
               My Resume
             </a>
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
 
           <h2 className="text-2xl md:text-3xl font-semibold pt-4">
-            I am a{" "} 
+            I am a{" "}
             <span className="text-purple-600 font-semibold">
               <Typewriter
                 words={[
@@ -71,7 +71,7 @@ export default function Home() {
         </div>
 
         {/* Image Section */}
-        <div className="lg:w-1/2 flex justify-center pt-6">
+        <div className="lg:w-1/2 w-full flex justify-center pt-6">
           <img
             src={HeroImage}
             alt="Hero"
