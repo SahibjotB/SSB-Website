@@ -50,7 +50,7 @@ export default function Home() {
               <img
                 src={LinkedInLogo}
                 alt="LinkedIn"
-                className="w-[110px] h-[110px] hover:scale-110 transition-transform"
+                className="w-[110px] h-[110px] hover:scale-110 transition-transform dark:invert"
               />
             </a>
           </div>

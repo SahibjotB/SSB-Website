@@ -39,7 +39,7 @@ export default function Navbar() {
               <img src={githubLogo} alt="GitHub" className="w-[44px] h-[44px] hover:scale-110 transition-transform dark:invert" />
             </a>
             <a href="https://www.linkedin.com/in/sahibjotb/" target="_blank" rel="noopener noreferrer">
-              <img src={linkedinLogo} alt="LinkedIn" className="w-[41px] h-[41px] hover:scale-110 transition-transform " />
+              <img src={linkedinLogo} alt="LinkedIn" className="w-[41px] h-[41px] hover:scale-110 transition-transform dark:invert" />
             </a>
 
           </div>
@@ -84,9 +84,9 @@ export default function Navbar() {
             aria-label="Toggle dark mode"
           >
             {darkMode ? (
-              <SunIcon className="w-12 h-12 text-yellow-400" />
+              <SunIcon className="w-8 h-8 text-yellow-400" />
             ) : (
-              <MoonIcon className="w-12 h-12 text-black dark:text-white" />
+              <MoonIcon className="w-8 h-8 text-black dark:text-white" />
             )}
           </button>
         </div>
@@ -178,7 +178,7 @@ export default function Navbar() {
                   href="https://www.linkedin.com/in/sahibjotb/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:scale-110 transition-transform"
+                  className="p-2 rounded-full hover:scale-110 transition-transform dark:invert"
                 >
                   <img src={linkedinLogo} alt="LinkedIn" className="w-[50px] h-[50px]" />
                 </a>
