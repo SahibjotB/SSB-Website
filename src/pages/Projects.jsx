@@ -48,7 +48,7 @@ export default function Projects() {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-4 sm:p-6 bg-neutral-200 dark:bg-neutral-950 rounded-2xl shadow-md transition-all duration-300 hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white text-black dark:text-white"
+            className="block p-4 sm:p-6 bg-neutral-300 dark:bg-neutral-950 rounded-2xl shadow-md transition-all duration-300 hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white text-black dark:text-white"
           >
             <h2 className="text-lg sm:text-xl font-semibold">{project.title}</h2>
             <p className="italic text-xs sm:text-sm mb-1">{project.tech}</p>
