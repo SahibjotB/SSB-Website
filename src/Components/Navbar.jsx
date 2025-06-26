@@ -64,17 +64,32 @@ export default function Navbar() {
             )
           )}
           <a href="/sahib-resume.pdf" target="_blank" rel="noopener noreferrer">
-            <img src={resumeLogo} alt="Resume" className="w-10 h-10" />
+            <img src={resumeLogo} alt="Resume" className="w-[60px] h-[60px] hover:scale-110 transition-transform " />
           </a>
           <a href="https://github.com/SahibjotB" target="_blank" rel="noopener noreferrer">
-            <img src={githubLogo} alt="GitHub" className="w-10 h-10" />
+            <img src={githubLogo} alt="GitHub" className="w-[65px] h-[65px] hover:scale-110 transition-transform " />
           </a>
           <a href="https://www.linkedin.com/in/sahibjotb/" target="_blank" rel="noopener noreferrer">
-            <img src={linkedinLogo} alt="LinkedIn" className="w-10 h-10" />
+            <img src={linkedinLogo} alt="LinkedIn" className="w-[60px] h-[60px] hover:scale-110 transition-transform " />
           </a>
           <button
             onClick={() => setDarkMode((prev) => !prev)}
             className="ml-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? (
+              <SunIcon className="w-10 h-10 text-yellow-400" />
+            ) : (
+              <MoonIcon className="w-10 h-10 text-gray-800 dark:text-gray-200" />
+            )}
+          </button>
+        </div>
+
+        <div className="md:hidden flex items-center space-x-2">
+          {/* Mobile Dark Mode Toggle */}
+          <button
+            onClick={() => setDarkMode((prev) => !prev)}
+            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
             aria-label="Toggle dark mode"
           >
             {darkMode ? (
@@ -83,18 +98,24 @@ export default function Navbar() {
               <MoonIcon className="w-7 h-7 text-gray-800 dark:text-gray-200" />
             )}
           </button>
-        </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
-          onClick={() => setDrawerOpen((open) => !open)}
-          aria-label="Open navigation menu"
-        >
-          <svg className="w-7 h-7 text-purple-700 dark:text-purple-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+          {/* Mobile Hamburger */}
+          <button
+            className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
+            onClick={() => setDrawerOpen((open) => !open)}
+            aria-label="Open navigation menu"
+          >
+            <svg
+              className="w-7 h-7 text-purple-700 dark:text-purple-300"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -135,7 +156,7 @@ export default function Navbar() {
                   href="/sahib-resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-purple-100 dark:hover:bg-purple-800 transition"
+                  className="p-2 rounded-full hover:scale-110 transition-transform"
                 >
                   <img src={resumeLogo} alt="Resume" className="w-[50px] h-[50px]" />
                 </a>
@@ -143,15 +164,15 @@ export default function Navbar() {
                   href="https://github.com/SahibjotB"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-purple-100 dark:hover:bg-purple-800 transition"
+                  className="p-2 rounded-full hover:scale-110 transition-transform"
                 >
-                  <img src={githubLogo} alt="GitHub" className="w-[50px] h-[50px]" />
+                  <img src={githubLogo} alt="GitHub" className="w-[55px] h-[55px]" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/sahibjotb/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-purple-100 dark:hover:bg-purple-800 transition"
+                  className="p-2 rounded-full hover:scale-110 transition-transform"
                 >
                   <img src={linkedinLogo} alt="LinkedIn" className="w-[50px] h-[50px]" />
                 </a>

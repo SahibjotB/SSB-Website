@@ -12,8 +12,8 @@ export default function Home() {
         {/* Text Section */}
         <div className="lg:w-1/2 w-full text-center lg:text-left space-y-6 pt-28">
           <div>
-            <h1 className="text-6xl md:text-7xl font-extrabold">Hi, I'm</h1>
-            <h1 className="text-6xl md:text-7xl font-extrabold text-purple-600 mt-2">
+            <h1 className="text-7xl md:text-8xl font-extrabold">Hi, I'm</h1>
+            <h1 className="text-7xl md:text-8xl font-extrabold text-purple-600 mt-2">
               Sahibjot
             </h1>
           </div>
@@ -39,7 +39,7 @@ export default function Home() {
               <img
                 src={GitHubLogo}
                 alt="GitHub"
-                className="w-[115px] h-[115px] hover:scale-110 transition-transform"
+                className="w-[120px] h-[120px] hover:scale-110 transition-transform"
               />
             </a>
             <a
