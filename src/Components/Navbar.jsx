@@ -21,60 +21,59 @@ export default function Navbar() {
   return (
     <nav className="w-full bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
       <div className="flex justify-between items-center px-4 md:px-8 py-4">
-        <div className="flex items-center space-x-2 md:space-x-4">
+        {/* Left Side: Name + Contact Info */}
+        <div className="flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0 md:space-x-4">
           <Link
             to="/"
             className="text-lg md:text-xl font-bold text-purple-700 dark:text-purple-300 hover:underline"
           >
             Sahibjot Boyal
           </Link>
-          <div className="hidden md:flex items-center space-x-2">
-            <a href="https://github.com/SahibjotB" target="_blank" rel="noopener noreferrer">
-              <img src={githubLogo} alt="GitHub" className="w-6 h-6" />
-            </a>
-            <a href="https://www.linkedin.com/in/sahibjotb/" target="_blank" rel="noopener noreferrer">
-              <img src={linkedinLogo} alt="LinkedIn" className="w-6 h-6" />
-            </a>
-            <a
-              href="/sahib-resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-gray-700 dark:text-gray-200 hover:text-purple-700 dark:hover:text-purple-300"
-            >
-              Resume
-            </a>
+          <div className="flex flex-wrap items-center gap-x-4 text-sm text-gray-600 dark:text-gray-300">
+            <span>📞 647-865-0244</span>
+            <span>✉️ sboyal3@uwo.ca</span>
           </div>
-          <span className="hidden md:inline text-sm text-gray-600 dark:text-gray-300 ml-4">📞 647-865-0244</span>
-          <span className="hidden md:inline text-sm text-gray-600 dark:text-gray-300 ml-2">✉️ sboyal3@uwo.ca</span>
         </div>
 
-        <div className="hidden md:flex items-center space-x-6">
-          {[
-            { to: "/education", label: "Education" },
-            { to: "/experience", label: "Experience" },
-            { to: "/projects", label: "Projects" },
-          ].map(({ to, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              className="text-sm text-gray-700 dark:text-gray-200 hover:text-purple-700 dark:hover:text-purple-300"
-            >
-              {label}
-            </NavLink>
-          ))}
+        {/* Desktop Nav Items */}
+        <div className="hidden md:flex items-center space-x-6 text-sm font-semibold text-gray-700 dark:text-gray-200">
+          <NavLink to="/education" className="hover:text-purple-700 dark:hover:text-purple-300">
+            Education
+          </NavLink>
+          <NavLink to="/experience" className="hover:text-purple-700 dark:hover:text-purple-300">
+            Experience
+          </NavLink>
+          <NavLink to="/projects" className="hover:text-purple-700 dark:hover:text-purple-300">
+            Projects
+          </NavLink>
+          <a
+            href="/sahib-resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-purple-700 dark:hover:text-purple-300"
+          >
+            Resume
+          </a>
+          <a href="https://github.com/SahibjotB" target="_blank" rel="noopener noreferrer">
+            <img src={githubLogo} alt="GitHub" className="w-[30px] h-[30px]" />
+          </a>
+          <a href="https://www.linkedin.com/in/sahibjotb/" target="_blank" rel="noopener noreferrer">
+            <img src={linkedinLogo} alt="LinkedIn" className="w-[30px] h-[30px]" />
+          </a>
           <button
             onClick={() => setDarkMode((prev) => !prev)}
             className="ml-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
             aria-label="Toggle dark mode"
           >
             {darkMode ? (
-              <SunIcon className="w-6 h-6 text-yellow-400" />
+              <SunIcon className="w-5 h-5 text-yellow-400" />
             ) : (
-              <MoonIcon className="w-6 h-6 text-gray-800 dark:text-gray-200" />
+              <MoonIcon className="w-5 h-5 text-gray-800 dark:text-gray-200" />
             )}
           </button>
         </div>
 
+        {/* Mobile Menu Toggle */}
         <button
           className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
           onClick={() => setDrawerOpen((open) => !open)}
@@ -86,6 +85,7 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Mobile Drawer */}
       {drawerOpen && (
         <div className="md:hidden fixed inset-0 z-50 flex" onClick={() => setDrawerOpen(false)}>
           <div className="flex-1" />
@@ -99,6 +99,7 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
+
             <div className="flex flex-col space-y-4">
               {[
                 { to: "/education", label: "Education" },
@@ -108,42 +109,40 @@ export default function Navbar() {
                 <NavLink
                   key={to}
                   to={to}
-                  className="text-sm text-gray-700 dark:text-gray-200 hover:text-purple-700 dark:hover:text-purple-300"
+                  className="w-full px-4 py-2 text-center rounded-md bg-purple-600 text-white hover:bg-purple-700 transition duration-200"
                 >
                   {label}
                 </NavLink>
               ))}
-            </div>
 
-            <div className="flex flex-col space-y-4 mt-6">
-              {[
-                {
-                  href: "https://github.com/SahibjotB",
-                  label: "GitHub",
-                  icon: githubLogo,
-                },
-                {
-                  href: "https://www.linkedin.com/in/sahibjotb/",
-                  label: "LinkedIn",
-                  icon: linkedinLogo,
-                },
-                {
-                  href: "/sahib-resume.pdf",
-                  label: "Resume",
-                  icon: null,
-                },
-              ].map(({ href, label, icon }) => (
+              <a
+                href="/sahib-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full px-4 py-2 text-center rounded-md bg-purple-600 text-white hover:bg-purple-700 transition duration-200"
+              >
+                Resume
+              </a>
+
+              {/* Icons Row */}
+              <div className="flex justify-center space-x-6 mt-6">
                 <a
-                  key={label}
-                  href={href}
+                  href="https://github.com/SahibjotB"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-2 rounded-md bg-purple-600 text-white hover:bg-purple-700 transition duration-200"
+                  className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-purple-100 dark:hover:bg-purple-800 transition"
                 >
-                  {icon && <img src={icon} alt={label} className="w-6 h-6" />}
-                  <span className="text-sm font-medium">{label}</span>
+                  <img src={githubLogo} alt="GitHub" className="w-[45px] h-[45px]" />
                 </a>
-              ))}
+                <a
+                  href="https://www.linkedin.com/in/sahibjotb/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-purple-100 dark:hover:bg-purple-800 transition"
+                >
+                  <img src={linkedinLogo} alt="LinkedIn" className="w-[45px] h-[45px]" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
