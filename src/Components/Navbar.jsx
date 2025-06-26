@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { SunIcon, MoonIcon } from "./ThemeIcons";
+import githubLogo from "../assets/github-logo.png";
+import linkedinLogo from "../assets/linkedin-logo.png";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
   useEffect(() => {
@@ -31,8 +29,12 @@ export default function Navbar() {
             Sahibjot Boyal
           </Link>
           <div className="hidden md:flex items-center space-x-2">
-            <a href="https://github.com/SahibjotB" className="text-sm text-gray-700 dark:text-gray-200 hover:text-purple-700 dark:hover:text-purple-300">GitHub</a>
-            <a href="https://www.linkedin.com/in/sahibjotb/" className="text-sm text-gray-700 dark:text-gray-200 hover:text-purple-700 dark:hover:text-purple-300">LinkedIn</a>
+            <a href="https://github.com/SahibjotB" target="_blank" rel="noopener noreferrer">
+              <img src={githubLogo} alt="GitHub" className="w-6 h-6" />
+            </a>
+            <a href="https://www.linkedin.com/in/sahibjotb/" target="_blank" rel="noopener noreferrer">
+              <img src={linkedinLogo} alt="LinkedIn" className="w-6 h-6" />
+            </a>
             <a
               href="/sahib-resume.pdf"
               target="_blank"
@@ -65,11 +67,14 @@ export default function Navbar() {
             className="ml-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
             aria-label="Toggle dark mode"
           >
-            {darkMode ? <SunIcon className="w-6 h-6 text-yellow-400" /> : <MoonIcon className="w-6 h-6 text-gray-800 dark:text-gray-200" />}
+            {darkMode ? (
+              <SunIcon className="w-6 h-6 text-yellow-400" />
+            ) : (
+              <MoonIcon className="w-6 h-6 text-gray-800 dark:text-gray-200" />
+            )}
           </button>
         </div>
 
-        {/* Mobile menu toggle */}
         <button
           className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
           onClick={() => setDrawerOpen((open) => !open)}
@@ -81,7 +86,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Drawer */}
       {drawerOpen && (
         <div className="md:hidden fixed inset-0 z-50 flex" onClick={() => setDrawerOpen(false)}>
           <div className="flex-1" />
@@ -111,6 +115,36 @@ export default function Navbar() {
               ))}
             </div>
 
+            <div className="flex flex-col space-y-4 mt-6">
+              {[
+                {
+                  href: "https://github.com/SahibjotB",
+                  label: "GitHub",
+                  icon: githubLogo,
+                },
+                {
+                  href: "https://www.linkedin.com/in/sahibjotb/",
+                  label: "LinkedIn",
+                  icon: linkedinLogo,
+                },
+                {
+                  href: "/sahib-resume.pdf",
+                  label: "Resume",
+                  icon: null,
+                },
+              ].map(({ href, label, icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-4 py-2 rounded-md bg-purple-600 text-white hover:bg-purple-700 transition duration-200"
+                >
+                  {icon && <img src={icon} alt={label} className="w-6 h-6" />}
+                  <span className="text-sm font-medium">{label}</span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       )}
