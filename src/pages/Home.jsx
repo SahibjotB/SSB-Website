@@ -1,6 +1,8 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
-import HeroImage from "../assets/hero-illustration.png"; // Add a valid image file here
+import HeroImage from "../assets/hero-illustration.png";
+import GitHubLogo from "../assets/github-logo.png";
+import LinkedInLogo from "../assets/linkedin-logo.png";
 
 export default function Home() {
   return (
@@ -17,7 +19,7 @@ export default function Home() {
             <span className="text-purple-600 font-semibold">
               <Typewriter
                 words={["Software Developer", "Web Developer", "Computer Scientist"]}
-                loop={0}             // Infinite loop
+                loop={0}
                 cursor
                 cursorStyle="|"
                 typeSpeed={80}
@@ -27,7 +29,7 @@ export default function Home() {
             </span>
           </h2>
 
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4 items-center">
             <a
               href="/sahib-resume.pdf"
               target="_blank"
@@ -36,17 +38,19 @@ export default function Home() {
             >
               Resume
             </a>
-            <a
-              href="https://github.com/SahibjotB"
-              className="px-6 py-3 bg-purple-600 text-white rounded-xl shadow hover:bg-purple-800 transition"
-            >
-              GitHub
+            <a href="https://github.com/SahibjotB" target="_blank" rel="noopener noreferrer">
+              <img
+                src={GitHubLogo}
+                alt="GitHub"
+                className="w-10 h-10 hover:scale-110 transition-transform"
+              />
             </a>
-            <a
-              href="https://www.linkedin.com/in/sahibjotb/"
-              className="px-6 py-3 bg-purple-600 text-white rounded-xl shadow hover:bg-purple-800 transition"
-            >
-              LinkedIn
+            <a href="https://www.linkedin.com/in/sahibjotb/" target="_blank" rel="noopener noreferrer">
+              <img
+                src={LinkedInLogo}
+                alt="LinkedIn"
+                className="w-10 h-10 hover:scale-110 transition-transform"
+              />
             </a>
           </div>
 
