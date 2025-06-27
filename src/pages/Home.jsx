@@ -18,7 +18,7 @@ export default function Home() {
             </h1>
           </div>
 
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2 items-center">
+          <div className="flex flex-row flex-nowrap justify-center lg:justify-start gap-4 pt-2 items-center">
             <a
               href="/sahib-resume.pdf"
               target="_blank"
@@ -27,7 +27,7 @@ export default function Home() {
               <img
                 src={ResumeLogo}
                 alt="Resume"
-                className=" w-[95px] h-[95px] hover:scale-110 transition-transform"
+                className=" w-[100px] h-[100px] hover:scale-110 transition-transform"
               />
 
             </a>
@@ -39,7 +39,7 @@ export default function Home() {
               <img
                 src={GitHubLogo}
                 alt="GitHub"
-                className="w-[105px] h-[105px] hover:scale-110 transition-transform dark:invert"
+                className="w-[110px] h-[110px] hover:scale-110 transition-transform dark:invert"
               />
             </a>
             <a
@@ -50,7 +50,7 @@ export default function Home() {
               <img
                 src={LinkedInLogo}
                 alt="LinkedIn"
-                className="w-[95px] h-[95px] hover:scale-110 transition-transform dark:invert"
+                className="w-[100px] h-[100px] hover:scale-110 transition-transform dark:invert"
               />
             </a>
           </div>
