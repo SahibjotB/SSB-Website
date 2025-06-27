@@ -25,7 +25,7 @@ export default function Navbar() {
       <div className="flex justify-between items-center px-4 md:px-8 py-4.5 min-h-[72px]">
         {/* Left Side: Name + Contact Info */}
         <div className="flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0 md:space-x-4">
-          <div className="flex items-center space-x-2 hover:text-black">
+          <div className="flex items-center space-x-1 hover:text-black">
             <Link
               to="/"
               className="text-2xl md:text-2xl"
