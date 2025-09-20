@@ -27,7 +27,7 @@ export default function Home() {
               <img
                 src={ResumeLogo}
                 alt="Resume"
-                className=" w-[100px] h-[100px] hover:scale-110 transition-transform"
+                className=" w-[105px] h-[105px] hover:scale-110 transition-transform"
               />
 
             </a>
