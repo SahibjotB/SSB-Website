@@ -30,15 +30,15 @@ export default function Navbar() {
               to="/"
               className="text-2xl md:text-2xl"
             >
-              <img src={Logo} alt="Logo" className="w-10 h-10 md:w-12 md:h-12 rounded-full hover:scale-110" />
+              <img src={Logo} alt="Logo" className="w-12 h-12 md:w-14 md:h-14 rounded-full hover:scale-110" />
             </Link>
-
             <Link
               to="/"
-              className="text-2xl md:text-2xl font-bold text-purple-700 dark:text-purple-500 hover:text-black dark:hover:text-white"
+              className="text-2xl md:text-2xl font-bold text-purple-700 hover:text-black dark:hover:text-white transition-colors"
             >
               Sahibjot Boyal
             </Link>
+
           </div>
           <div className="hidden md:flex flex-wrap items-center pl-2 gap-x-2 text-base text-black dark:text-white font-semibold">
 
@@ -167,30 +167,30 @@ export default function Navbar() {
                 </NavLink>
               ))}
 
-              <div className="flex justify-center space-x-1 mt-6 pl-1">
+              <div className="flex flex-row justify-center gap-4 mt-6 pl-1">
                 <a
                   href="/sahib-resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:scale-110 transition-transform"
+                  className="flex items-center rounded-full hover:scale-110 transition-transform"
                 >
-                  <img src={resumeLogo} alt="Resume" className="w-[50px] h-[50px]" />
+                  <img src={resumeLogo} alt="Resume" className="w-[55px] h-[55px]" />
                 </a>
                 <a
                   href="https://github.com/SahibjotB"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:scale-110 transition-transform dark:invert"
+                  className="flex items-center rounded-full hover:scale-110 transition-transform dark:invert"
                 >
-                  <img src={githubLogo} alt="GitHub" className="w-[55px] h-[55px]" />
+                  <img src={githubLogo} alt="GitHub" className="w-[60px] h-[60px]" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/sahibjotb/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:scale-110 transition-transform dark:invert"
+                  className="flex items-center rounded-full hover:scale-110 transition-transform dark:invert"
                 >
-                  <img src={linkedinLogo} alt="LinkedIn" className="w-[50px] h-[50px]" />
+                  <img src={linkedinLogo} alt="LinkedIn" className="w-[55px] h-[55px]" />
                 </a>
               </div>
 
