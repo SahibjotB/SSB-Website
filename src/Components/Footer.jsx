@@ -6,9 +6,9 @@ export default function Footer() {
       <p className="px-2">
         © {new Date().getFullYear()} Sahibjot Boyal •{" "}
         <a href="/" className="text-blue-600 hover:underline">Home</a> •{" "}
-        <a href="/education" className="text-blue-600 hover:underline">Education</a> •{" "}
-        <a href="/experience" className="text-blue-600 hover:underline">Experience</a> •{" "}
-        <a href="/projects" className="text-blue-600 hover:underline">Projects</a>
+        <a href="/Education" className="text-blue-600 hover:underline">Education</a> •{" "}
+        <a href="/Experience" className="text-blue-600 hover:underline">Experience</a> •{" "}
+        <a href="/Projects" className="text-blue-600 hover:underline">Projects</a>
       </p>
     </footer>
   );
