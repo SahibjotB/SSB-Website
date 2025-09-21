@@ -31,6 +31,13 @@ const experiences = [
       "Toronto, Ontario. Improved sorting efficiency using RF scanners, organized dispatch flow, and coordinated with team leads to resolve tagging issues.",
     link: "https://www.dhl.com/us-en/home.html",
   },
+  {
+    title: "Web Designer",
+    subtitle: "HTML, CSS, JavaScript, WordPress",  
+    description:
+      "Designed and developed a fully responsive, modern website for a local cabinetry business enhancing their online presence and user engagement",
+    link: "https://friendkitchencabinets.ca/",
+  },
 ];
 
 export default function Experience() {
