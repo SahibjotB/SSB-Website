@@ -46,10 +46,10 @@ export default function Experience() {
             href={exp.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-6 bg-neutral-300 dark:bg-neutral-950 rounded-2xl shadow hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white transition-colors duration-300 text-black dark:text-white"
+            className="block p-6 bg-neutral-300 dark:bg-neutral-900 rounded-2xl shadow hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white transition-colors duration-300 text-black dark:text-white"
           >
             <h2 className="text-2xl font-semibold">{exp.title}</h2>
-            <p className="italic text-gray-600 mb-2">{exp.subtitle}</p>
+            <p className="italic text-xs sm:text-sm mb-2">{exp.subtitle}</p>
             <p>{exp.description}</p>
           </a>
         ))}
