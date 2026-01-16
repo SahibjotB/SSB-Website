@@ -2,6 +2,20 @@ import React from "react";
 
 const projects = [
   {
+    title: "Website Resume",
+    tech: "React, Tailwind, Vite",
+    description:
+      "Personal portfolio website showcasing projects, education, and experience.",
+    link: "https://github.com/SahibjotB/SSB-Website",
+  },
+  {
+    title: "Boyal Blueprint",
+    tech: "React, Tailwind, Vite, OpenAI API, MLS API",
+    description:
+      "A web platform designed to guide users from renting to purchasing their first home. Features an AI chatbot powered by OpenAI and real-time property insights through MLS API integration.",
+    link: "https://github.com/SahibjotB/boyal-blueprint",
+  },
+  {
     title: "Western Maps",
     tech: "Java, SQL",
     description: "Campus navigation app with admin and user POI features.",
@@ -28,34 +42,61 @@ const projects = [
       "A Discord Planning Bot that helps users schedule and organize events directly through a Discord server. Built during a hackathon with features like calendar integration, reminders, and RSVP tracking.",
     link: "https://github.com/Corsage/hackathon",
   },
-  {
-    title: "Website Resume",
-    tech: "React, Tailwind, Vite",
-    description:
-      "Personal portfolio website showcasing projects, education, and experience.",
-    link: "https://github.com/SahibjotB/SSB-Website",
-  },
 ];
+
+import CardCarousel from "../components/CardCarousel";
 
 export default function Projects() {
   return (
-    <div className="min-h-screen px-2 sm:px-4 py-8 sm:py-12 bg-white dark:bg-black text-black dark:text-white">
-      <h1 className="text-2xl sm:text-4xl font-bold text-center mb-6 sm:mb-8">Projects</h1>
-      <div className="max-w-4xl mx-auto grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
-        {projects.map((project, index) => (
-          <a
-            key={index}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block p-4 sm:p-6 bg-neutral-300 dark:bg-neutral-900 rounded-2xl shadow-md transition-all duration-300 hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white text-black dark:text-white"
-          >
-            <h2 className="text-lg sm:text-xl font-semibold">{project.title}</h2>
-            <p className="italic text-xs sm:text-sm mb-1">{project.tech}</p>
-            <p className="text-sm sm:text-base">{project.description}</p>
-          </a>
-        ))}
+    <section id="projects" className="min-h-screen flex flex-col justify-center py-20 bg-white dark:bg-black transition-colors duration-500">
+      <div className="max-w-7xl mx-auto px-6 w-full">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-black dark:text-white transition-colors duration-500">
+          Projects
+        </h2>
+
+        <CardCarousel
+          items={projects}
+          renderCard={(project) => (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full max-w-2xl p-8 md:p-12 bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-white/10 hover:border-purple-500/50 hover:shadow-purple-500/20 transition-all duration-500 group relative overflow-hidden"
+            >
+              {/* Decorative Gradient Blob */}
+              <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
+              <div className="absolute bottom-0 right-0 -mr-32 -mb-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
+              <div className="absolute top-0 left-0 -ml-32 -mt-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
+              <div className="absolute top-0 right-0 -mr-32 -mt-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
+
+              <div className="relative z-10 flex flex-col items-center text-center space-y-6">
+                <h3 className="text-3xl md:text-4xl font-extrabold text-black dark:text-white group-hover:text-purple-600 transition-all duration-500">
+                  {project.title}
+                </h3>
+
+                <div className="flex flex-wrap justify-center gap-2">
+                  {project.tech.split(',').map((tech, i) => (
+                    <span key={i} className="px-3 py-1 text-xs font-bold text-white bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full shadow-sm">
+                      {tech.trim()}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-lg">
+                  {project.description}
+                </p>
+
+                <div className="mt-4 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                  <span className="inline-flex items-center px-6 py-2 border border-purple-600 text-purple-600 hover:!bg-purple-600 hover:text-white dark:text-purple-600 dark:border-purple-600 dark:hover:!bg-purple-600 dark:hover:text-white rounded-full font-semibold transition-colors">
+                    View Project
+                  </span>
+                </div>
+              </div>
+            </a>
+          )}
+        />
       </div>
-    </div>
+    </section>
   );
 }
+

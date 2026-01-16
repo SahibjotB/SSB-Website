@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
   background-color: white;
@@ -16,6 +16,7 @@ html, body, #root {
 html.dark {
   background-color: #18181b;
 }
+
 body.dark {
   background-color: #18181b;
 }
@@ -28,10 +29,70 @@ body.dark {
 }
 
 @keyframes blink {
-  from, to {
+
+  from,
+  to {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
+  }
+}
+
+/* Carousel Animations */
+.carousel-slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.carousel-slide-in-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.carousel-slide-out-right {
+  animation: slideOutRight 0.5s ease-out forwards;
+}
+
+.carousel-slide-out-left {
+  animation: slideOutLeft 0.5s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
   }
 }

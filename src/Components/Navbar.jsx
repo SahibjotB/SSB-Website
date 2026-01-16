@@ -1,108 +1,127 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import { SunIcon, MoonIcon } from "./ThemeIcons";
-import githubLogo from "../assets/github-logo.svg";
-import linkedinLogo from "../assets/linkedin-logo.svg";
-import resumeLogo from "../assets/resume-logo.png";
 import Logo from "/logo.png";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    setMenuOpen(false);
+  };
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
   useEffect(() => {
-    const closeDrawer = () => setDrawerOpen(false);
-    window.addEventListener("resize", closeDrawer);
-    return () => window.removeEventListener("resize", closeDrawer);
-  }, []);
+    const handleScroll = () => {
+      if (!menuOpen) {
+        console.log("Scrolling...", window.scrollY);
+        setScrolled(window.scrollY > 10);
+      }
+    };
+
+    handleScroll(); // 🔥 Important: check scroll on mount
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [menuOpen]);
+
+  const toggleMenu = () => {
+    if (!menuOpen) {
+      setScrolled(false);
+    } else {
+      setScrolled(window.scrollY > 10);
+    }
+    setMenuOpen((prev) => !prev);
+  };
+
+  const links = [
+    { to: "education", label: "Education" },
+    { to: "experience", label: "Experience" },
+    { to: "projects", label: "Projects" },
+  ];
 
   return (
-    <nav className="w-full bg-white dark:bg-black shadow-md sticky top-0 z-50">
-      <div className="flex justify-between items-center px-4 md:px-8 py-4.5 min-h-[72px]">
-        {/* Left Side: Name + Contact Info */}
-        <div className="flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0 md:space-x-4">
-          <div className="flex items-center space-x-1 hover:text-black">
-            <Link
-              to="/"
-              className="text-2xl md:text-2xl"
-            >
-              <img src={Logo} alt="Logo" className="w-12 h-12 md:w-14 md:h-14 rounded-full hover:scale-110" />
-            </Link>
-            <Link
-              to="/"
-              className="text-2xl md:text-2xl font-bold text-purple-700 hover:text-black dark:hover:text-white transition-colors"
-            >
+    <header className="fixed top-2 left-0 right-0 z-50 flex justify-center bg-transparent">
+      <nav
+        className={`relative flex items-center justify-between h-20 px-6 sm:px-16 transition-all duration-500 ease-in-out
+          ${scrolled
+            ? "backdrop-blur-md bg-white/90 dark:bg-black/90 border border-gray-200 dark:border-neutral-800 rounded-xl shadow-md w-[60%]"
+            : menuOpen
+              ? "bg-white dark:bg-black border-transparent shadow-md w-full"
+              : "bg-transparent border border-transparent w-full"
+          }`}
+      >
+        {/* Logo */}
+        <div className="flex-shrink-0">
+          <a
+            href="/"
+            onClick={handleLogoClick}
+            className="flex items-center space-x-3 group cursor-pointer"
+          >
+            <img
+              src={Logo}
+              alt="Logo"
+              className="w-12 md:w-16 h-12 md:h-16 rounded-full transition-transform group-hover:scale-110"
+            />
+            <span className="text-lg md:text-xl font-bold text-black dark:text-white transition-colors group-hover:text-purple-600">
               Sahibjot Boyal
-            </Link>
-
-          </div>
-          <div className="hidden md:flex flex-wrap items-center pl-2 gap-x-2 text-base text-black dark:text-white font-semibold">
-
-            <a href="/sahib-resume.pdf" target="_blank" rel="noopener noreferrer">
-              <img src={resumeLogo} alt="Resume" className="w-[40px] h-[40px] hover:scale-110 transition-transform " />
-            </a>
-            <a href="https://github.com/SahibjotB" target="_blank" rel="noopener noreferrer">
-              <img src={githubLogo} alt="GitHub" className="w-[44px] h-[44px] hover:scale-110 transition-transform dark:invert" />
-            </a>
-            <a href="https://www.linkedin.com/in/sahibjotb/" target="_blank" rel="noopener noreferrer">
-              <img src={linkedinLogo} alt="LinkedIn" className="w-[41px] h-[41px] hover:scale-110 transition-transform dark:invert" />
-            </a>
-
-          </div>
-          <div className="hidden md:flex flex-wrap items-center pl-2 gap-x-2 text-base text-black dark:text-white font-semibold">
-
-            <span>📞 647-865-0244</span>
-            <span>✉️ sboyal3@uwo.ca</span>
-
-          </div>
+            </span>
+          </a>
         </div>
 
-        {/* Desktop Links & Icons */}
-        <div className="hidden md:flex items-center space-x-6 font-semibold text-lg">
-          {[ 
-            { to: "/education", label: "Education" },
-            { to: "/experience", label: "Experience" },
-            { to: "/projects", label: "Projects" },
-          ].map(({ to, href, label, external }) =>
-            external ? (
+        {/* Center Links */}
+        <ul className="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-10 font-semibold text-lg">
+          {links.map(({ to, label }) => (
+            <li key={to}>
               <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black dark:text-white hover:text-purple-700 dark:hover:text-purple-700"
+                href={`#${to}`}
+                onClick={(e) => handleNavClick(e, to)}
+                className="text-black dark:text-white hover:text-purple-600 dark:hover:text-purple-600 whitespace-nowrap transition-colors cursor-pointer"
               >
                 {label}
               </a>
-            ) : (
-              <NavLink
-                key={to}
-                to={to}
-                className="text-black dark:text-white hover:text-purple-700 dark:hover:text-purple-700"
-              >
-                {label}
-              </NavLink>
-            )
-          )}
-          <button
-            onClick={() => setDarkMode((prev) => !prev)}
-            className="ml-2 p-2 rounded-full bg-white dark:bg-black hover:invert transition-colors"
-            aria-label="Toggle dark mode"
-          >
-            {darkMode ? (
-              <SunIcon className="w-8 h-8 text-yellow-400" />
-            ) : (
-              <MoonIcon className="w-8 h-8 text-black dark:text-white" />
-            )}
-          </button>
-        </div>
+            </li>
+          ))}
+        </ul>
 
-        <div className="md:hidden flex items-center space-x-2">
-          {/* Mobile Dark Mode Toggle */}
+        {/* Dark Mode + Menu */}
+        <div className="flex items-center space-x-4">
           <button
             onClick={() => setDarkMode((prev) => !prev)}
             className="p-2 rounded-full bg-white dark:bg-black hover:invert transition-colors"
@@ -115,99 +134,34 @@ export default function Navbar() {
             )}
           </button>
 
-          {/* Mobile Hamburger */}
           <button
-            className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
-            onClick={() => setDrawerOpen((open) => !open)}
-            aria-label="Open navigation menu"
+            onClick={toggleMenu}
+            className={`md:hidden text-black dark:text-white focus:outline-none transition-transform duration-500 ${menuOpen ? "rotate-180" : "rotate-0"}`}
+            aria-label="Toggle menu"
           >
-            <svg
-              className="w-7 h-7 text-purple-700 dark:text-purple-300"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Drawer */}
-      {drawerOpen && (
-        <div className="md:hidden fixed inset-0 z-50 flex" onClick={() => setDrawerOpen(false)}>
-          <div className="flex-1" />
-          <div
-            className="relative w-64 h-full bg-white dark:bg-black shadow-lg flex flex-col p-6"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="self-end mb-6 p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
-              onClick={() => setDrawerOpen(false)}
-              aria-label="Close navigation menu"
+      <div
+        className={`absolute top-full left-0 md:hidden transition-all duration-500 ease-in-out z-40
+          ${menuOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0 pointer-events-none"}`}
+      >
+        <div className="min-h-screen w-[55vw] bg-white dark:bg-black text-black dark:text-white p-6 shadow-lg space-y-6">
+          {links.map(({ to, label }) => (
+            <a
+              key={to}
+              href={`#${to}`}
+              onClick={(e) => handleNavClick(e, to)}
+              className="flex items-center space-x-3 text-base font-semibold hover:text-purple-600 cursor-pointer"
             >
-              <svg className="w-6 h-6 text-purple-700 dark:text-purple-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            <div className="flex flex-col space-y-4">
-              {[
-                { to: "/education", label: "Education" },
-                { to: "/experience", label: "Experience" },
-                { to: "/projects", label: "Projects" },
-              ].map(({ to, label }) => (
-                <NavLink
-                  key={to}
-                  to={to}
-                  className="w-full px-4 py-2 text-center rounded-md bg-purple-700 text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-200 font-semibold"
-                >
-                  {label}
-                </NavLink>
-              ))}
-
-              <div className="flex flex-row justify-center gap-4 mt-6 pl-1">
-                <a
-                  href="/sahib-resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center rounded-full hover:scale-110 transition-transform"
-                >
-                  <img src={resumeLogo} alt="Resume" className="w-[55px] h-[55px]" />
-                </a>
-                <a
-                  href="https://github.com/SahibjotB"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center rounded-full hover:scale-110 transition-transform dark:invert"
-                >
-                  <img src={githubLogo} alt="GitHub" className="w-[60px] h-[60px]" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/sahibjotb/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center rounded-full hover:scale-110 transition-transform dark:invert"
-                >
-                  <img src={linkedinLogo} alt="LinkedIn" className="w-[55px] h-[55px]" />
-                </a>
-              </div>
-
-              <div className="mt-6 pl-1 text-left text-[15px] text-black dark:text-white space-y-2">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">📞</span>
-                  <span>647-865-0244</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">✉️</span>
-                  <span>sboyal3@uwo.ca</span>
-                </div>
-              </div>
-            </div>
-          </div>
+              <span>{label}</span>
+            </a>
+          ))}
         </div>
-      )}
-    </nav>
+      </div>
+    </header>
   );
 }

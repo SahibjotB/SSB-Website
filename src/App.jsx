@@ -1,13 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-
-
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Education from "./pages/Education";
-import Experience from "./pages/Experience";
-import Projects from "./pages/Projects";
 
 export default function App() {
   return (
@@ -17,9 +12,6 @@ export default function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/projects" element={<Projects />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </div>

@@ -3,6 +3,21 @@ import React from "react";
 
 const experiences = [
   {
+    title: "Full Stack Web Developer",
+    subtitle: "Tailwind CSS, React, Node.js, Hydrogen, HTML",
+    description:
+      "Built a custom headless Shopify storefront for the brand Lenvl using Hydrogen and React, handling both server-side data loading and client-side UI development. Delivered a performant, scalable, and fully responsive e-commerce experience with modern full-stack architecture and best practices.",
+    link: "https://lenvl.com/",
+  },
+  {
+    title: "Web Designer",
+    subtitle: "HTML, CSS, JavaScript, WordPress",
+    description:
+      "Designed and developed a fully responsive, modern website for a local cabinetry business enhancing their online presence and user engagement",
+    link: "https://friendkitchencabinets.ca/",
+  },
+
+  {
     title: "React – The Complete Guide (Udemy)",
     subtitle: "JavaScript, React, Redux, React Router, Next.js",
     description:
@@ -28,39 +43,64 @@ const experiences = [
     title: "DHL International – Distribution Centre",
     subtitle: "Logistics, Team Coordination",
     description:
-      "Toronto, Ontario. Improved sorting efficiency using RF scanners, organized dispatch flow, and coordinated with team leads to resolve tagging issues.",
+      "Improved sorting efficiency using RF scanners, organized dispatch flow, and coordinated with team leads to resolve tagging issues.",
     link: "https://www.dhl.com/us-en/home.html",
-  },
-  {
-    title: "Web Designer",
-    subtitle: "HTML, CSS, JavaScript, WordPress",  
-    description:
-      "Designed and developed a fully responsive, modern website for a local cabinetry business enhancing their online presence and user engagement",
-    link: "https://friendkitchencabinets.ca/",
   },
 ];
 
+import CardCarousel from "../components/CardCarousel";
+
 export default function Experience() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black px-2 sm:px-4 py-8 sm:py-12">
-      <h1 className="text-2xl sm:text-4xl font-bold text-black dark:text-white text-center mb-6 sm:mb-8">
-        Experience
-      </h1>
-      <div className="max-w-4xl mx-auto grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
-        {experiences.map((exp, idx) => (
-          <a
-            key={idx}
-            href={exp.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block p-6 bg-neutral-300 dark:bg-neutral-900 rounded-2xl shadow hover:bg-purple-700 hover:text-white dark:hover:bg-purple-700 dark:hover:text-white transition-colors duration-300 text-black dark:text-white"
-          >
-            <h2 className="text-2xl font-semibold">{exp.title}</h2>
-            <p className="italic text-xs sm:text-sm mb-2">{exp.subtitle}</p>
-            <p>{exp.description}</p>
-          </a>
-        ))}
+    <section id="experience" className="min-h-screen flex flex-col justify-center py-20 bg-white dark:bg-black transition-colors duration-500">
+      <div className="max-w-7xl mx-auto px-6 w-full">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-black dark:text-white transition-colors duration-500">
+          Experience
+        </h2>
+
+        <CardCarousel
+          items={experiences}
+          renderCard={(exp) => (
+            <a
+              href={exp.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full max-w-2xl p-8 md:p-12 bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-white/10 hover:border-purple-500/50 hover:shadow-purple-500/20 transition-all duration-500 group relative overflow-hidden no-underline hover:no-underline"
+            >
+              {/* Decorative Gradient Background */}
+              <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
+              <div className="absolute bottom-0 right-0 -mr-32 -mb-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
+              <div className="absolute top-0 left-0 -ml-32 -mt-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
+              <div className="absolute top-0 right-0 -mr-32 -mt-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
+
+              <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+                <h3 className="text-3xl md:text-4xl font-extrabold text-black dark:text-white group-hover:text-purple-600 transition-colors duration-300">
+                  {exp.title}
+                </h3>
+
+                <div className="flex flex-wrap justify-center gap-2">
+                  {exp.subtitle.split(',').map((tech, i) => (
+                    <span key={i} className="px-3 py-1 text-xs font-bold text-white bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full shadow-sm">
+                      {tech.trim()}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-lg mt-4">
+                  {exp.description}
+                </p>
+
+                <div className="mt-4 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                  <span className="inline-flex items-center px-6 py-2 border border-purple-600 text-purple-600 hover:!bg-purple-600 hover:text-white dark:text-purple-600 dark:border-purple-600 dark:hover:!bg-purple-600 dark:hover:text-white rounded-full font-semibold transition-colors">
+                    View
+                  </span>
+                </div>
+              </div>
+            </a>
+          )}
+        />
       </div>
-    </div>
+    </section>
   );
 }
+

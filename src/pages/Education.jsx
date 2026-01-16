@@ -4,55 +4,68 @@ import graduationPhoto from "../assets/western2.jpg";
 
 export default function Education() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black dark:text-white px-2 sm:px-4 py-8 sm:py-12 flex flex-col items-center">
-      {/* Logo */}
-      <img src={westernLogo} alt="Western Logo" className="h-16 sm:h-24 mb-6 sm:mb-8" />
+    <section
+      id="education"
+      className="min-h-screen flex flex-col justify-center pt-32 pb-20 bg-white dark:bg-black transition-colors duration-500"
+    >
+      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
+        {/* Logo */}
+        <img src={westernLogo} alt="Western Logo" className="h-20 sm:h-28 mb-12" />
 
-      {/* Content */}
-      <div className="flex flex-col md:flex-row gap-6 sm:gap-10 max-w-6xl w-full">
-        {/* Left: Graduation Image */}
-        <div className="md:w-1/2 w-full">
-          <img
-            src={graduationPhoto}
-            alt="Graduation"
-            className="w-full h-64 sm:h-full rounded-xl object-cover shadow-xl"
-            style={{ minHeight: "200px", maxHeight: "600px" }}
-          />
-        </div>
-
-        {/* Right: Sections */}
-        <div className="md:w-1/2 w-full flex flex-col gap-4 sm:gap-6 mt-4 md:mt-0">
-          {/* About */}
-          <div className="bg-neutral-300 dark:bg-neutral-900 rounded-xl p-4 sm:p-6 shadow-md transition duration-300 ease-in-out text-black dark:text-white">
-            <h2 className="text-xl font-semibold text-purple-700 mb-2">About the Program</h2>
-            <p className="text-black dark:text-white">
-              I completed a 4-year Bachelor of Science in Computer Science at Western University (Class of 2024), based in London, Ontario. The program emphasized theoretical and practical learning in AI, cybersecurity, systems engineering, and database technologies — fostering collaboration, innovation, and technical depth.
-            </p>
+        {/* Content */}
+        <div className="flex flex-col lg:flex-row gap-12 w-full">
+          {/* Left: Graduation Image */}
+          <div className="lg:w-1/2 flex justify-center">
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-25 transition-colors duration-500"></div>
+              <img
+                src={graduationPhoto}
+                alt="Graduation"
+                className="relative rounded-2xl shadow-2xl w-full max-w-md object-cover transition-colors duration-500"
+              />
+            </div>
           </div>
 
-          {/* Courses */}
-          <div className="bg-neutral-300 dark:bg-neutral-900 rounded-xl p-4 sm:p-6 shadow-md transition duration-300 ease-in-out text-black dark:text-white">
-            <h2 className="text-xl font-semibold text-purple-700 mb-2">Key Coursework</h2>
-            <ul className="list-disc pl-6 text-black dark:text-white">
-              <li>Data Structures & Algorithms</li>
-              <li>Operating Systems</li>
-              <li>Computer Networks & Security</li>
-              <li>Databases and SQL</li>
-              <li>Object-Oriented Software Engineering</li>
-              <li>Web & Mobile Application Development</li>
-              <li>Artificial Intelligence & Machine Learning</li>
-            </ul>
-          </div>
+          {/* Right: Sections */}
+          <div className="lg:w-1/2 flex flex-col gap-6">
+            {/* About */}
+            <div className="p-8 bg-neutral-50 dark:bg-neutral-900 rounded-2xl shadow-lg border border-transparent transition-colors duration-500">
+              <h2 className="text-2xl font-bold text-purple-600 mb-4">About the Program</h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+                I completed a 4-year Bachelor of Science in Computer Science at Western University (Class of 2025), based in London, Ontario. The program emphasized theoretical and practical learning in AI, cybersecurity, systems engineering, and database technologies — fostering collaboration, innovation, and technical depth.
+              </p>
+            </div>
 
-          {/* Involvement */}
-          <div className="bg-neutral-300 dark:bg-neutral-900 rounded-xl p-4 sm:p-6 shadow-md transition duration-300 ease-in-out text-black dark:text-white">
-            <h2 className="text-xl font-semibold text-purple-700 dark:text-purple-700 mb-2">Campus Involvement</h2>
-            <p className="text-black dark:text-white">
-              I participated in programming clubs, mentorship programs, and hackathons. These activities enhanced my teamwork and leadership capabilities, complementing my academic training through real-world collaboration and innovation.
-            </p>
+            {/* Courses */}
+            <div className="p-8 bg-neutral-50 dark:bg-neutral-900 rounded-2xl shadow-lg border border-transparent transition-colors duration-500">
+              <h2 className="text-2xl font-bold text-purple-600 mb-4">Key Coursework</h2>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700 dark:text-gray-300">
+                {[
+                  "Data Structures & Algorithms",
+                  "Operating Systems",
+                  "Computer Networks & Security",
+                  "Databases and SQL",
+                  "Object-Oriented Software Engineering",
+                  "AI & Machine Learning"
+                ].map((course) => (
+                  <li key={course} className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                    {course}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Involvement */}
+            <div className="p-8 bg-neutral-50 dark:bg-neutral-900 rounded-2xl shadow-lg border border-transparent transition-colors duration-500">
+              <h2 className="text-2xl font-bold text-purple-600 mb-4">Campus Involvement</h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+                I participated in programming clubs, mentorship programs, and hackathons. These activities enhanced my teamwork and leadership capabilities, complementing my academic training through real-world collaboration and innovation.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
