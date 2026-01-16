@@ -44,7 +44,7 @@ const projects = [
   },
 ];
 
-import CardCarousel from "../components/CardCarousel";
+import CardCarousel from "../Components/CardCarousel";
 
 export default function Projects() {
   return (

@@ -48,7 +48,7 @@ const experiences = [
   },
 ];
 
-import CardCarousel from "../components/CardCarousel";
+import CardCarousel from "../Components/CardCarousel";
 
 export default function Experience() {
   return (
