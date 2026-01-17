@@ -3,7 +3,7 @@ import React from "react";
 const projects = [
   {
     title: "Website Resume",
-    tech: "React, Tailwind, Vite",
+    tech: "React, Tailwind CSS, Vite, HTML",
     description:
       "Personal portfolio website showcasing projects, education, and experience.",
     link: "https://github.com/SahibjotB/SSB-Website",
@@ -71,7 +71,7 @@ export default function Projects() {
 
                 <div className="flex flex-wrap justify-center gap-2">
                   {project.tech.split(',').map((tech, i) => (
-                    <span key={i} className="px-3 py-1 text-xs font-bold text-white rounded-full shadow-sm">
+                    <span key={i} className="px-3 py-1 text-xs font-bold text-white rounded-full shadow-sm bg-purple-600">
                       {tech.trim()}
                     </span>
                   ))}

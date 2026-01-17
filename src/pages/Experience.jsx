@@ -4,7 +4,7 @@ import React from "react";
 const experiences = [
   {
     title: "Full Stack Web Developer",
-    subtitle: "Tailwind CSS, React, Node.js, Hydrogen, HTML",
+    subtitle: "React, Tailwind CSS, Node.js, Hydrogen, HTML",
     description:
       "Built a custom headless Shopify storefront for the brand Lenvl using Hydrogen and React, handling both server-side data loading and client-side UI development. Delivered a performant, scalable, and fully responsive e-commerce experience with modern full-stack architecture and best practices.",
     link: "https://lenvl.com/",
@@ -65,7 +65,7 @@ export default function Experience() {
               href={exp.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full max-w-2xl p-8 md:p-12 bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-white/10 hover:border-purple-500/50 hover:shadow-purple-500/20 transition-all duration-500 group relative overflow-hidden no-underline hover:no-underline"
+              className="block w-full max-w-2xl p-8 md:p-10 bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-white/10 hover:border-purple-500/50 hover:shadow-purple-500/20 transition-all duration-500 group relative overflow-hidden no-underline hover:no-underline"
             >
 
               <div className="relative z-10 flex flex-col items-center text-center space-y-4">
@@ -75,13 +75,13 @@ export default function Experience() {
 
                 <div className="flex flex-wrap justify-center gap-2">
                   {exp.subtitle.split(',').map((tech, i) => (
-                    <span key={i} className="px-3 py-1 text-xs font-bold text-white rounded-full shadow-sm">
+                    <span key={i} className="px-3 py-1 text-xs font-bold text-white rounded-full shadow-sm bg-purple-600">
                       {tech.trim()}
                     </span>
                   ))}
                 </div>
 
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-lg mt-4">
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-lg mt-4 tracking-tight">
                   {exp.description}
                 </p>
 
