@@ -62,13 +62,13 @@ export default function CardCarousel({ items, renderCard }) {
                 </button>
 
                 {/* Card Container */}
-                <div className="relative w-full overflow-hidden min-h-[400px] flex items-center justify-center">
+                <div className="relative w-full overflow-hidden min-h-[500px] flex items-center justify-center">
 
                     {/* Exiting Card (Absolute) */}
                     {exitIndex !== null && (
                         <div
                             key={`exit-${exitIndex}`}
-                            className={`absolute top-0 left-0 w-full h-full flex items-center justify-center px-4 pointer-events-none transform ${direction === "right" ? "carousel-slide-out-left" : "carousel-slide-out-right"
+                            className={`absolute top-0 left-0 w-full h-full flex items-center justify-center px-0 md:px-4 pointer-events-none transform ${direction === "right" ? "carousel-slide-out-left" : "carousel-slide-out-right"
                                 }`}
                         >
                             {renderCard(items[exitIndex])}
@@ -78,7 +78,7 @@ export default function CardCarousel({ items, renderCard }) {
                     {/* Entering/Current Card (Relative to hold height) */}
                     <div
                         key={`current-${currentIndex}`}
-                        className={`w-full flex justify-center px-4 transform ${isAnimating
+                        className={`w-full flex justify-center px-0 md:px-4 transform ${isAnimating
                             ? direction === "right"
                                 ? "carousel-slide-in-right"
                                 : "carousel-slide-in-left"

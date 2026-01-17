@@ -49,7 +49,7 @@ import CardCarousel from "../Components/CardCarousel";
 export default function Projects() {
   return (
     <section id="projects" className="min-h-screen flex flex-col justify-center py-20 bg-white dark:bg-black transition-colors duration-500">
-      <div className="max-w-7xl mx-auto px-6 w-full">
+      <div className="max-w-7xl mx-auto px-0 md:px-6 w-full">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-black dark:text-white transition-colors duration-500">
           Projects
         </h2>
@@ -61,7 +61,7 @@ export default function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full max-w-2xl p-8 md:p-12 bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-white/10 hover:border-purple-500/50 hover:shadow-purple-500/20 transition-all duration-500 group relative overflow-hidden"
+              className="block w-screen md:w-full md:max-w-2xl p-6 md:p-12 bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-white/10 hover:border-purple-500/50 hover:shadow-purple-500/20 transition-all duration-500 group relative overflow-hidden"
             >
 
               <div className="relative z-10 flex flex-col items-center text-center space-y-6">
