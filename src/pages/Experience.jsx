@@ -67,11 +67,6 @@ export default function Experience() {
               rel="noopener noreferrer"
               className="block w-full max-w-2xl p-8 md:p-12 bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-white/10 hover:border-purple-500/50 hover:shadow-purple-500/20 transition-all duration-500 group relative overflow-hidden no-underline hover:no-underline"
             >
-              {/* Decorative Gradient Background */}
-              <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
-              <div className="absolute bottom-0 right-0 -mr-32 -mb-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
-              <div className="absolute top-0 left-0 -ml-32 -mt-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
-              <div className="absolute top-0 right-0 -mr-32 -mt-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
 
               <div className="relative z-10 flex flex-col items-center text-center space-y-4">
                 <h3 className="text-3xl md:text-4xl font-extrabold text-black dark:text-white group-hover:text-purple-600 transition-colors duration-300">
@@ -80,7 +75,7 @@ export default function Experience() {
 
                 <div className="flex flex-wrap justify-center gap-2">
                   {exp.subtitle.split(',').map((tech, i) => (
-                    <span key={i} className="px-3 py-1 text-xs font-bold text-white bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full shadow-sm">
+                    <span key={i} className="px-3 py-1 text-xs font-bold text-white rounded-full shadow-sm">
                       {tech.trim()}
                     </span>
                   ))}
