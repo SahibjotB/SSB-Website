@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import HeroImage from "../assets/hero-illustration.svg";
 import GitHubLogo from "../assets/github-logo.svg";
@@ -10,17 +10,53 @@ import Projects from "./Projects";
 
 export default function Home() {
   const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let isScrolling = false;
+
+    const handleWheel = (e) => {
+      // ONLY run this logic if the screen is wider than 768px (Desktop)
+      if (window.innerWidth < 768) return; 
+
+      e.preventDefault();
+      if (isScrolling) return;
+
+      isScrolling = true;
+      const direction = e.deltaY > 0 ? 1 : -1;
+      const sectionHeight = window.innerHeight;
+      const currentScroll = container.scrollTop;
+      const nextTarget = Math.round(currentScroll / sectionHeight + direction) * sectionHeight;
+
+      container.scrollTo({
+        top: nextTarget,
+        behavior: "smooth",
+      });
+
+      setTimeout(() => {
+        isScrolling = false;
+      }, 1000);
+    };
+
+    container.addEventListener("wheel", handleWheel, { passive: false });
+    return () => container.removeEventListener("wheel", handleWheel);
+  }, []);
+
   return (
     <div
       ref={scrollRef}
       id="scroll-container"
-      className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory bg-white dark:bg-black"
+      className="h-screen overflow-y-scroll scroll-smooth bg-white dark:bg-black 
+                snap-y snap-mandatory md:snap-none
+                scrollbar-hide [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
     >
       {/* Hero Section */}
-      <section id="home" className="min-h-screen snap-start flex items-start lg:items-center px-6 md:px-16 pt-32">
+      <section id="home" className="min-h-screen flex items-start lg:items-center px-6 md:px-16 pt-32 snap-start">
         <div className="flex flex-col lg:flex-row items-center lg:items-start max-w-7xl mx-auto w-full gap-10">
           {/* Text Section */}
-          <div className="lg:w-1/2 w-full text-center lg:text-left space-y-6 pt-16 pl-4">
+          <div className="lg:w-1/2 w-screen text-center lg:text-left space-y-6 pt-16 pl-4">
             <div>
               <h1 className="text-7xl md:text-8xl font-extrabold">Hi, I'm</h1>
               <h1 className="text-7xl md:text-8xl font-extrabold text-purple-600 mt-2">
@@ -39,7 +75,6 @@ export default function Home() {
                   alt="Resume"
                   className=" w-[105px] h-[105px] hover:scale-110 transition-transform"
                 />
-
               </a>
               <a
                 href="https://github.com/SahibjotB"
@@ -95,12 +130,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section id="education" className="min-h-screen snap-start">
         <Education />
       </section>
+
       <section id="experience" className="min-h-screen snap-start">
         <Experience />
       </section>
+
       <section id="projects" className="min-h-screen snap-start">
         <Projects />
       </section>
