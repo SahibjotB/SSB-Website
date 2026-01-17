@@ -14,13 +14,17 @@ export default function Navbar() {
 
   const handleLogoClick = (e) => {
     e.preventDefault();
+
+    const container = document.getElementById("scroll-container");
+    if (!container) return;
+
     if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        container.scrollTo({ top: 0, behavior: "smooth" });
       }, 100);
     } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      container.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -48,25 +52,32 @@ export default function Navbar() {
   }, [darkMode]);
 
   useEffect(() => {
+    const scrollContainer = document.getElementById("scroll-container");
+    if (!scrollContainer) return;
+
     const handleScroll = () => {
       if (!menuOpen) {
-        console.log("Scrolling...", window.scrollY);
-        setScrolled(window.scrollY > 10);
+        setScrolled(scrollContainer.scrollTop > 10);
       }
     };
 
-    handleScroll(); // 🔥 Important: check scroll on mount
+    handleScroll();
+    scrollContainer.addEventListener("scroll", handleScroll);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      scrollContainer.removeEventListener("scroll", handleScroll);
+    };
   }, [menuOpen]);
 
   const toggleMenu = () => {
+    const container = document.getElementById("scroll-container");
+
     if (!menuOpen) {
       setScrolled(false);
     } else {
-      setScrolled(window.scrollY > 10);
+      setScrolled(container?.scrollTop > 10);
     }
+
     setMenuOpen((prev) => !prev);
   };
 
@@ -81,7 +92,7 @@ export default function Navbar() {
       <nav
         className={`relative flex items-center justify-between h-20 px-6 sm:px-16 transition-all duration-500 ease-in-out
           ${scrolled
-            ? "backdrop-blur-md bg-white/90 dark:bg-black/90 border border-gray-200 dark:border-neutral-800 rounded-xl shadow-md w-[60%]"
+            ? "backdrop-blur-md bg-white/90 dark:bg-black/90 border border-gray-200 dark:border-neutral-800 rounded-xl shadow-md md:w-[60%] w-[80%]"
             : menuOpen
               ? "bg-white dark:bg-black border-transparent shadow-md w-full"
               : "bg-transparent border border-transparent w-full"

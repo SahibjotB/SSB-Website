@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import HeroImage from "../assets/hero-illustration.svg";
 import GitHubLogo from "../assets/github-logo.svg";
@@ -9,10 +9,15 @@ import Experience from "./Experience";
 import Projects from "./Projects";
 
 export default function Home() {
+  const scrollRef = useRef(null);
   return (
-    <div className="bg-white dark:bg-black transition-colors duration-500 text-black dark:text-white">
+    <div
+      ref={scrollRef}
+      id="scroll-container"
+      className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory bg-white dark:bg-black"
+    >
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-start lg:items-center px-6 md:px-16 pt-32">
+      <section id="home" className="min-h-screen snap-start flex items-start lg:items-center px-6 md:px-16 pt-32">
         <div className="flex flex-col lg:flex-row items-center lg:items-start max-w-7xl mx-auto w-full gap-10">
           {/* Text Section */}
           <div className="lg:w-1/2 w-full text-center lg:text-left space-y-6 pt-16 pl-4">
@@ -90,9 +95,15 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Education />
-      <Experience />
-      <Projects />
+      <section id="education" className="min-h-screen snap-start">
+        <Education />
+      </section>
+      <section id="experience" className="min-h-screen snap-start">
+        <Experience />
+      </section>
+      <section id="projects" className="min-h-screen snap-start">
+        <Projects />
+      </section>
     </div>
   );
 }
