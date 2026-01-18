@@ -62,7 +62,7 @@ export default function CardCarousel({ items, renderCard }) {
                 </button>
 
                 {/* Card Container */}
-                <div className="relative w-full overflow-hidden min-h-[400px] md:min-h-[500px] flex items-center justify-center">
+                <div className="relative w-full overflow-hidden min-h-[450px] md:min-h-[500px] flex items-center justify-center">
 
                     {/* Exiting Card (Absolute) */}
                     {exitIndex !== null && (
