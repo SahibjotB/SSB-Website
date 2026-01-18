@@ -54,7 +54,7 @@ export default function Experience() {
   return (
     <section id="experience" className="min-h-screen flex flex-col justify-center py-20 bg-white dark:bg-black transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-0 md:px-6 w-full">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-black dark:text-white transition-colors duration-500">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-2 md:mb-12 text-black dark:text-white transition-colors duration-500">
           Experience
         </h2>
 
@@ -69,7 +69,7 @@ export default function Experience() {
             >
 
               <div className="relative z-10 flex flex-col items-center text-center space-y-4">
-                <h3 className="text-3xl md:text-4xl font-extrabold text-black dark:text-white group-hover:text-purple-600 transition-colors duration-300">
+                <h3 className="text-2xl md:text-4xl font-extrabold text-black dark:text-white group-hover:text-purple-600 transition-colors duration-300">
                   {exp.title}
                 </h3>
 
@@ -81,7 +81,7 @@ export default function Experience() {
                   ))}
                 </div>
 
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-lg mt-4 tracking-tight">
+                <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-lg mt-4 tracking-tight">
                   {exp.description}
                 </p>
 

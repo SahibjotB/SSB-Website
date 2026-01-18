@@ -50,7 +50,7 @@ export default function Projects() {
   return (
     <section id="projects" className="min-h-screen flex flex-col justify-center py-20 bg-white dark:bg-black transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-0 md:px-6 w-full">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-black dark:text-white transition-colors duration-500">
+        <h2 className="text-4xl md:text-5xl font-bold text-center pb-2 md:mb-12 text-black dark:text-white transition-colors duration-500">
           Projects
         </h2>
 

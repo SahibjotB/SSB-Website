@@ -48,23 +48,23 @@ export default function Home() {
     <div
       ref={scrollRef}
       id="scroll-container"
-      className="h-screen overflow-y-scroll scroll-smooth bg-white dark:bg-black 
+      className="h-screen overflow-y-scroll scroll-smooth bg-white dark:bg-black transition-colors duration-500
                 snap-y snap-mandatory md:snap-none
                 scrollbar-hide [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
     >
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-start lg:items-center px-6 md:px-16 pt-32 snap-start">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start max-w-7xl mx-auto w-full gap-10">
+      <section id="home" className="min-h-screen flex items-start lg:items-center px-6 md:px-16 pt-16 md:pt-32 snap-start">
+        <div className="flex flex-col md:flex-row items-center md:items-start max-w-7xl mx-auto w-full gap-10">
           {/* Text Section */}
-          <div className="lg:w-1/2 w-screen text-center lg:text-left space-y-6 pt-16 pl-4">
+          <div className="lg:w-1/2 w-screen text-center lg:text-left space-y-6 pt-14 md:pt-16 pl-0 md:pl-4">
             <div>
-              <h1 className="text-7xl md:text-8xl font-extrabold">Hi, I'm</h1>
-              <h1 className="text-7xl md:text-8xl font-extrabold text-purple-600 mt-2">
+              <h1 className="text-7xl md:text-8xl font-extrabold dark:invert text-center transition-colors duration-500">Hi, I'm</h1>
+              <h1 className="text-7xl md:text-8xl font-extrabold text-purple-600 mt-2 text-center">
                 Sahibjot
               </h1>
             </div>
 
-            <div className="flex flex-row flex-nowrap justify-center lg:justify-start gap-4 pt-2 items-center">
+            <div className="flex flex-row flex-nowrap justify-center md:justify-center gap-4 pt-2 items-center">
               <a
                 href="/sahib-resume.pdf"
                 target="_blank"
@@ -73,7 +73,7 @@ export default function Home() {
                 <img
                   src={ResumeLogo}
                   alt="Resume"
-                  className=" w-[105px] h-[105px] hover:scale-110 transition-transform"
+                  className=" w-[105px] h-[105px] hover:scale-110 transition-transform duration-500"
                 />
               </a>
               <a
@@ -84,7 +84,7 @@ export default function Home() {
                 <img
                   src={GitHubLogo}
                   alt="GitHub"
-                  className="w-[110px] h-[110px] hover:scale-110 transition-transform dark:invert"
+                  className="w-[110px] h-[110px] hover:scale-110 dark:invert transition-all duration-500"
                 />
               </a>
               <a
@@ -95,12 +95,12 @@ export default function Home() {
                 <img
                   src={LinkedInLogo}
                   alt="LinkedIn"
-                  className="w-[100px] h-[100px] hover:scale-110 transition-transform dark:invert"
+                  className="w-[100px] h-[100px] hover:scale-110 dark:invert transition-all duration-500"
                 />
               </a>
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-semibold pt-4">
+            <h2 className="text-2xl md:text-3xl font-semibold pt-2 md:pt-4 text-black dark:text-white transition-colors duration-500">
               I am a{" "}
               <span className="text-purple-600 font-semibold">
                 <Typewriter
@@ -121,7 +121,7 @@ export default function Home() {
           </div>
 
           {/* Image Section */}
-          <div className="lg:w-[100%] w-full flex justify-center pb-40 pl-8">
+          <div className="lg:w-[100%] w-full flex justify-center pb-0 md:pb-40 pl-0 md:pl-8">
             <img
               src={HeroImage}
               alt="Hero"

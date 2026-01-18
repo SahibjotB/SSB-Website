@@ -32,10 +32,10 @@ export default function CardCarousel({ items, renderCard }) {
     };
 
     return (
-        <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center py-10">
+        <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center py-4 md:py-10">
 
             {/* Progress Indicator - Separated from Card */}
-            <div className="flex space-x-2 mb-8">
+            <div className="flex space-x-2 mb-0 md:mb-8">
                 {items.map((_, idx) => (
                     <div
                         key={idx}
@@ -62,7 +62,7 @@ export default function CardCarousel({ items, renderCard }) {
                 </button>
 
                 {/* Card Container */}
-                <div className="relative w-full overflow-hidden min-h-[500px] flex items-center justify-center">
+                <div className="relative w-full overflow-hidden min-h-[400px] md:min-h-[500px] flex items-center justify-center">
 
                     {/* Exiting Card (Absolute) */}
                     {exitIndex !== null && (
@@ -100,9 +100,9 @@ export default function CardCarousel({ items, renderCard }) {
             </div>
 
             {/* Mobile Navigation (Bottom) */}
-            <div className="flex md:hidden justify-center space-x-8 mt-6">
-                <button onClick={prevSlide} className="p-3 bg-white/10 rounded-full shadow-sm border border-black/10 dark:border-white/10"><ChevronLeft className="w-6 h-6 text-purple-600" /></button>
-                <button onClick={nextSlide} className="p-3 bg-white/10 rounded-full shadow-sm border border-black/10 dark:border-white/10"><ChevronRight className="w-6 h-6 text-purple-600" /></button>
+            <div className="flex md:hidden justify-center space-x-8 mt-2">
+                <button onClick={prevSlide} className="px-3 pt-1 bg-white/10 rounded-full shadow-sm border border-black/10 dark:border-white/10"><ChevronLeft className="w-6 h-6 text-purple-600" /></button>
+                <button onClick={nextSlide} className="px-3 pt-1 bg-white/10 rounded-full shadow-sm border border-black/10 dark:border-white/10"><ChevronRight className="w-6 h-6 text-purple-600" /></button>
             </div>
 
         </div>
