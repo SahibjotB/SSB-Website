@@ -19,7 +19,7 @@ export default function Home() {
 
     const handleWheel = (e) => {
       // ONLY run this logic if the screen is wider than 768px (Desktop)
-      if (window.innerWidth < 768) return; 
+      if (window.innerWidth < 768) return;
 
       e.preventDefault();
       if (isScrolling) return;
@@ -66,7 +66,7 @@ export default function Home() {
 
             <div className="flex flex-row flex-nowrap justify-center md:justify-center gap-4 pt-2 items-center">
               <a
-                href="/sahib-resume.pdf"
+                href="/Sahibjot-Boyal-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
